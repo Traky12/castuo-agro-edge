@@ -1,0 +1,33 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+data/
+*.db
+*.sqlite
+*.sqlite3
+logs/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Firmware build artifacts
+hardware/esp32/**/build/
+*.bin
+*.elf
+
+# Secrets
+*.pem
+*.key
+secrets/

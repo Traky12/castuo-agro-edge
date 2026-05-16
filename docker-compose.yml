@@ -1,0 +1,34 @@
+# CASTUO Agro Edge — local / pilot stack
+services:
+  mqtt:
+    image: eclipse-mosquitto:2
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./deployment/docker/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mqtt_data:/mosquitto/data
+
+  gateway:
+    build:
+      context: .
+      dockerfile: deployment/docker/Dockerfile.gateway
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    environment:
+      MQTT_BROKER_HOST: mqtt
+      BUFFER_SQLITE_PATH: /data/edge_buffer.db
+    volumes:
+      - edge_data:/data
+    depends_on:
+      - mqtt
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  mqtt_data:
+  edge_data:

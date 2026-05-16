@@ -1,0 +1,15 @@
+[Unit]
+Description=CASTUO Agro Edge Gateway
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/castuo-agro-edge
+EnvironmentFile=/opt/castuo-agro-edge/.env
+ExecStart=/usr/bin/docker compose up gateway
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
