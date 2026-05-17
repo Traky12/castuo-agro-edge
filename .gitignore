@@ -31,3 +31,5 @@ hardware/esp32/**/build/
 *.pem
 *.key
 secrets/
+
+firmware/credentials.h
