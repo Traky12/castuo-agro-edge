@@ -1,0 +1,17 @@
+﻿[Unit]
+Description=CASTUO MQTT Gateway
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/castuo-edge/gateway/mqtt
+EnvironmentFile=/opt/castuo-edge/.env
+ExecStart=/usr/bin/python3 /opt/castuo-edge/gateway/mqtt/main.py
+Restart=always
+RestartSec=5
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
