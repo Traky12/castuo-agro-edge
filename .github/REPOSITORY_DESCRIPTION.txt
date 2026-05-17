@@ -1,0 +1,1 @@
+Offline-first rural edge computing stack for agritech and environmental monitoring. MQTT gateway, local buffering, ESP32/Pi — CASTÚO-SYSTEM edge plane.
