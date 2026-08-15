@@ -1,84 +1,79 @@
-# CASTUO Agro Edge
+# 📡 castuo-agro-edge — Resilient Rural IoT Stack
 
-**Offline-first rural edge computing stack for agritech and environmental monitoring.**
+![Status](https://img.shields.io/badge/Status-Active%20Engineering-blue)
+![Maturity](https://img.shields.io/badge/Maturity-v0.1%20(Impl)-informational)
+![License](https://img.shields.io/badge/License-Pending-lightgrey)
 
-CASTUO Agro Edge is the operational edge layer of [CASTÚO-SYSTEM](https://github.com/Traky12/Castuo-system): it runs where connectivity is unreliable, sovereignty matters, and telemetry must survive disconnections.
+> **Offline-first rural edge computing stack for agritech and environmental monitoring.**
 
-## Overview
+---
 
-CASTUO Agro Edge provides a resilient operational layer for distributed agricultural and environmental systems operating in unstable or low-connectivity environments.
+## 1. Purpose & Scope
+**castuo-agro-edge** is the operational edge layer of the ecosystem. It is designed to run in environments where connectivity is unreliable, sovereignty matters, and telemetry must survive disconnections.
 
-The platform is designed for:
+Its scope covers:
+- **MQTT Telemetry Ingestion:** Local sensor data handling.
+- **Offline Buffering:** Data persistence during disconnection periods.
+- **Hardware Integration:** Support for Raspberry Pi gateways and ESP32 nodes.
+- **Edge Orchestration:** Sensor management and local actuation loops.
 
-- hydroponics
-- greenhouse automation
-- agrovoltaics
-- forestry monitoring
-- dehesa ecosystems
-- environmental telemetry
-- rural infrastructure automation
+---
 
-## Core features
-
-- MQTT telemetry ingestion
-- Offline buffering and synchronization
-- Raspberry Pi gateway support
-- ESP32 / ESP32-S3 integration
-- Local relay and actuator control
-- Edge AI inference (optional)
-- Sensor orchestration
-- Secure telemetry pipelines
-- Resilient offline-first architecture
-
-## Technology stack
-
-| Layer | Technology |
-|-------|------------|
-| Gateway | Python 3.11+, FastAPI |
-| Messaging | MQTT (Mosquitto) |
-| Buffer | SQLite / TimescaleDB (edge) |
-| Containers | Docker, Compose |
-| Hardware | Raspberry Pi, ESP32 |
-| AI (optional) | Mistral AI EU |
-| Core sync | CASTÚO-SYSTEM API / GaiaChain (planned) |
-
-## Repository layout
+## 2. Ecosystem Position
+castuo-agro-edge acts as the **EDGE** layer, providing field evidence and telemetry to the core platform.
 
 ```text
-castuo-agro-edge/
-├── gateway/          # MQTT, buffering, sync, telemetry, health, storage
-├── edge_ai/          # Local inference, rules, irrigation logic
-├── hardware/         # Pi, ESP32, sensors, relays, wiring guides
-├── protocols/        # MQTT, Modbus, LoRa, HTTP adapters
-├── deployment/       # Docker, k3s, Hetzner, systemd
-├── docs/             # Architecture, offline mode, security
-└── examples/         # Hydroponics, greenhouse, dehesa, livestock
+castuo-agro-edge (Edge)
+     │
+     ├── CASTÚO-SYSTEM (Core)
+     │      Upstream sync target
+     │
+     ├── ctaex-iot-pilot (Pilot)
+     │      Validation environment
+     │
+     └── GOLDfish (Assurance)
+            Security & validation gate
 ```
 
-## Quick start
+---
 
+## 3. Technology Stack
+| Layer | Technology |
+| :--- | :--- |
+| **Gateway** | Python 3.11+, FastAPI |
+| **Messaging** | MQTT (Mosquitto) |
+| **Buffer** | SQLite / TimescaleDB (edge) |
+| **Hardware** | Raspberry Pi, ESP32, LoRaWAN |
+| **Containers** | Docker, Compose |
+| **AI (optional)** | Mistral AI EU |
+
+---
+
+## 4. Engineering & Evidence
+Following the **Evidence-First** principle, this repository focuses on providing reproducible field data.
+- **Implemented:** MQTT ingestion, local buffering, and Pi gateway support.
+- **Planned:** Full end-to-end synchronization with GaiaChain/Core.
+
+Maturity is tracked through the **G0-G7 Gates** in the governance plane (`castuo-evolution`).
+
+---
+
+## 5. Quick Start
 ```bash
 cp .env.example .env
 docker compose up -d
 curl http://localhost:8080/health
 ```
 
-See `docs/architecture/EDGE-STACK.md` and `docs/offline-mode/OVERVIEW.md`.
+---
 
-## Relationship to CASTÚO-SYSTEM
+## 6. Navigation
+[← Ecosystem Profile](https://github.com/Traky12) | [→ Core Platform](https://github.com/Traky12/Castuo-system) | [→ Governance](https://github.com/Traky12/castuo-evolution) | [→ Architecture Docs](docs/architecture/EDGE-STACK.md)
 
-| This repo (edge) | Castuo-system (core) |
-|------------------|----------------------|
-| Ingest, buffer, actuate locally | API, n8n, PostgreSQL, SABIONDA OMEGA |
-| Offline-first | Cloud / Hetzner EU orchestration |
-| ESP32 / Pi profiles | TRL9 integration, compliance, dashboards |
+---
 
-Edge devices sync upstream when connectivity returns; they never require permanent cloud access for critical loops.
+## 🌐 Connect
+- 🌍 [Website](https://castuo-system.es/)
+- 📡 [Edge Stack](https://github.com/Traky12/castuo-agro-edge)
 
-## Roadmap
-
-See [ROADMAP.md](ROADMAP.md) for v0.1 milestones.
-
-## License
-
-License pending definition. See [LICENSE](LICENSE).
+**Build · Validate · Observe · Document · Evolve**
