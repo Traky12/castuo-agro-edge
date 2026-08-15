@@ -1,0 +1,33 @@
+name: CASTÚO architecture surface check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  surface-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject tracked private key-like files
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^|/)(\.env|\.env\.|.*\.pem$|.*\.key$|id_rsa|credentials\.json)$'; then
+            echo 'Private or key-like file is tracked.'
+            exit 1
+          fi
+      - name: Scan high-risk secret patterns
+        shell: bash
+        run: |
+          set -euo pipefail
+          files=$(git ls-files '*.md' '*.yaml' '*.yml' '*.json' '*.toml' '*.ini' '*.py' '*.sh' '*.env*' || true)
+          if [ -n "$files" ] && grep -nE '(AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH|PRIVATE) KEY-----|ghp_[A-Za-z0-9]{30,}|sk-[A-Za-z0-9]{30,})' $files; then
+            echo 'High-risk secret pattern detected.'
+            exit 1
+          fi

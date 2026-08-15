@@ -77,3 +77,7 @@ curl http://localhost:8080/health
 - 📡 [Edge Stack](https://github.com/Traky12/castuo-agro-edge)
 
 **Build · Validate · Observe · Document · Evolve**
+
+## Architecture governance boundary
+
+This repository is governed through the CASTÚO-SYSTEM evidence chain. Its current role, visibility boundary, required provenance, security baseline and promotion rules are defined in [`docs/CASTUO_ARCHITECTURE_GOVERNANCE.md`](docs/CASTUO_ARCHITECTURE_GOVERNANCE.md). A repository artifact or green workflow proves only the declared scope; it does not by itself prove certification, production operation, funding, customer contracts or commercial success.
