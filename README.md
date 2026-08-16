@@ -115,3 +115,13 @@ This repository does not by itself claim production operation, certification, in
 
 See [`docs/CASTUO_PUBLIC_SURFACE.md`](docs/CASTUO_PUBLIC_SURFACE.md) for the public boundary. `Claim != Evidence`; `CURRENT != TARGET`; promotion requires control-plane authorization.
 <!-- CASTUO:PUBLIC-SURFACE-END -->
+
+<!-- CASTUO-PUBLIC-INTEGRATION:START -->
+## CASTÚO-SYSTEM public integration
+
+**Repository role:** Edge layer.
+
+Capacidades edge acotadas y verificables. The public reference surface is governed by the [Traky12 profile](https://github.com/Traky12/Traky12) and the [castuo-evolution control plane](https://github.com/Traky12/castuo-evolution). Current ecosystem status is documented in the [integration status](https://github.com/Traky12/castuo-evolution/blob/main/docs/GITHUB_INTEGRATION_STATUS_2026-08-16.md) and [blocker register](https://github.com/Traky12/castuo-evolution/blob/main/docs/GITHUB_INTEGRATION_BLOCKERS_2026-08-16.md).
+
+> Identity is not evidence. Repository activity is not operational truth. No production, certification, legal-compliance, customer, revenue, continuous-operation or federation claim is implied by this README block.
+<!-- CASTUO-PUBLIC-INTEGRATION:END -->
