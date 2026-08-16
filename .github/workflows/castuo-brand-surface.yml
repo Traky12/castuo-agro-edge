@@ -1,0 +1,38 @@
+name: CASTUO Brand Surface
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  brand-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate controlled README brand block
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f README.md
+          grep -q '<!-- CASTUO:BRAND:START -->' README.md
+          grep -q '<!-- CASTUO:BRAND:END -->' README.md
+          grep -q 'raw.githubusercontent.com/Traky12/Traky12/main/assets/brand/' README.md
+          if grep -Eiq 'logo.*(certif|production|operational|compliance)|brand.*(certif|production|operational|compliance)' README.md; then
+            echo 'BLOCKED: brand surface must not imply certification, production, operational readiness or legal compliance.'
+            exit 1
+          fi
+      - name: Validate profile brand manifest when present
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f assets/brand/brand-manifest.yaml ]; then
+            test -f assets/brand/castuo-system-logo-master.png
+            test -f assets/brand/checksums.sha256
+            grep -q 'status_claim: IDENTITY_ONLY' assets/brand/brand-manifest.yaml
+            grep -q 'promotion_impact: NONE' assets/brand/brand-manifest.yaml
+          fi

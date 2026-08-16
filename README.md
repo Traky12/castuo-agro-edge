@@ -1,3 +1,9 @@
+<!-- CASTUO:BRAND:START -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Traky12/Traky12/main/assets/brand/castuo-system-logo-square.jpg" alt="CASTÚO-SYSTEM official logo" width="180" />
+</p>
+<!-- CASTUO:BRAND:END -->
+
 # 📡 castuo-agro-edge — Resilient Rural IoT Stack
 
 ![Status](https://img.shields.io/badge/Status-Active%20Engineering-blue)
