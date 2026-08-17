@@ -143,6 +143,14 @@ The governed integration currently covers the following evidence-scoped capabili
 | Supply-chain controls | Secret scan, SBOM, dependency scan and local dependency result of 0 advisories | Local green status does not prove remote GitHub Security and quality is 0 |
 | Traky12 integration | 16 remote repositories classified; 14 governed README PRs open and traceable | Protected main branches require review/checks; forks are excluded |
 
+### OSS reputation and credibility
+
+Reputation is treated as an output of real open-source work, not as a badge-collection target. The profile prioritises useful contributions, technical discussions, clear issues, cross-reviews, co-authored PRs, strong documentation, reproducible releases and organic external use. It does not create trivial PRs, artificial Discussions, mirror accounts, inflated activity, purchased badges or synthetic stars.
+
+The public profile communicates **Founder & Lead Architect of CASTÚO-SYSTEM · Systems Architect · Evidence Engineer · AI Governance & Assurance** and presents CASTÚO as an evidence-governed control plane for distributed operations and AI-enabled systems. `Castuo-system` is the implementation lighthouse; `Traky12` is the public baseline/read-model. The 16-repository inventory is one modular system model, not 16 products. Achievements, stars, commits, releases or follower counts are activity signals, never proof of quality, production, adoption, security, independence or economic outcome.
+
+The complete guardrail strategy is [`docs/governance/CASTUO-OSS-REPUTATION-STRATEGY.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-OSS-REPUTATION-STRATEGY.md). Its internal metrics are dated and bounded: useful contributions, valuable technical conversations, substantive co-authored PRs, documentation completeness, reproducible releases and organic interest in the lighthouse repository.
+
 ### Canonical public narrative
 
 **CASTÚO-SYSTEM is an evidence-governed control plane for distributed operations and AI-enabled systems, with Evidence-Ready Field Operations as its first commercial wedge.** The first user journey is `Operate offline → preserve evidence → review → export`. This is a bounded product narrative, not a claim of production, customer adoption, field validation or commercial traction.
