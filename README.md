@@ -149,7 +149,7 @@ The governed integration currently covers the following evidence-scoped capabili
 
 The public profile is a baseline and read-model: `public baseline → index → claims → evidence links → boundaries`. The 16-repository inventory is one modular system model, not 16 products. Repository roles and authority remain governed by the sovereign reference architecture and operating index.
 
-The confidence progression is `evidence-scoped → independently reproduced → field validated → commercially validated`. The profile does not claim that CASTÚO is better than named competitors, best-in-class, commercially superior, certified, autonomous or revenue-generating without a dated, scope-bound evidence passport. The canonical narrative is [`docs/governance/CASTUO-PUBLIC-NARRATIVE-AND-WEDGE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-PUBLIC-NARRATIVE-AND-WEDGE.md).
+The confidence progression is `evidence-scoped → independently reproduced → field validated → commercially validated`. The profile makes no comparative claim against named competitors and does not use best-in-class, commercial superiority, certification, autonomy or revenue language without a dated, scope-bound evidence passport. The canonical narrative is [`docs/governance/CASTUO-PUBLIC-NARRATIVE-AND-WEDGE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-PUBLIC-NARRATIVE-AND-WEDGE.md).
 
 ### Maturity Acceleration Program G0→N6
 
