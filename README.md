@@ -119,7 +119,7 @@ CASTÚO-SYSTEM uses an explicit authority hierarchy: `todo.md` records the opera
 
 Ownership is explicit. Platform owns dashboard and contracts; governance owns README and index; assurance owns passports and claims; security owns vault and connectors; repository maintainers own remote Security and quality; independent reviewers and pilot owners own E3/N5 evidence. Every change follows `task → artifact → branch → commit → PR → review/checks → merge → checkpoint → passport`. No automation may self-approve, merge protected branches, register secrets or promote claims without the required gate.
 
-The sovereignty reference is [`docs/governance/CASTUO-SOVEREIGN-REFERENCE-ARCHITECTURE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-SOVEREIGN-REFERENCE-ARCHITECTURE.md). It defines data sovereignty, external dependency boundaries, recovery rules and rollback responsibilities.
+The sovereignty reference is [`docs/governance/CASTUO-SOVEREIGN-REFERENCE-ARCHITECTURE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-SOVEREIGN-REFERENCE-ARCHITECTURE.md). It defines data sovereignty, external dependency boundaries, recovery rules and rollback responsibilities. The machine-readable change policy is [`docs/governance/CASTUO-COMMIT-GOVERNANCE-POLICY.json`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-COMMIT-GOVERNANCE-POLICY.json); it is normative for commit messages, PR review, required checks, ownership, claim boundaries and rollback.
 
 ### Claim discipline
 
