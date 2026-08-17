@@ -143,6 +143,14 @@ The governed integration currently covers the following evidence-scoped capabili
 | Supply-chain controls | Secret scan, SBOM, dependency scan and local dependency result of 0 advisories | Local green status does not prove remote GitHub Security and quality is 0 |
 | Traky12 integration | 16 remote repositories classified; 14 governed README PRs open and traceable | Protected main branches require review/checks; forks are excluded |
 
+### Integral improvement and sovereign state
+
+CASTÚO-SYSTEM evolved from dispersed repositories and capabilities into a control plane governed by evidence, security and controlled promotion. Its shared sequence is `ecosystem → public index → capability → contract → implementation → evidence → security → trust passport → promotion gate → negative evidence`. The system distinguishes implementation, documentation, validation, maturity, promotion and authorized claims.
+
+The current sovereign model defines one system with explicit roles: `Castuo-system` core, `castuo-evolution` governance, `Cast-o`/`goldfish` assurance and recovery, `castuo-offline-field-operations` field, `castuo-agro-edge` edge, and `Traky12` public baseline. Forks and upstream integrations are not proprietary capability. Security boundaries remain architectural: SaaS secrets stay backend-only behind an approved vault; local scans do not prove remote zero alerts.
+
+The canonical improvement report is [`docs/governance/CASTUO-INTEGRAL-IMPROVEMENT-AND-SOVEREIGN-STATE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-INTEGRAL-IMPROVEMENT-AND-SOVEREIGN-STATE.md). It records the evidence chain, binary competitive matrix, passports, maturity ceilings, recovery lineage and unresolved external gates. Current statuses remain `PENDING`, `SECURITY_HOLD`, `NOT_VERIFIED`, `EVIDENCE_REQUIRED` or `PROMOTION-BLOCKED` where external authorization or evidence is missing.
+
 ### OSS reputation and credibility
 
 Reputation is treated as an output of real open-source work, not as a badge-collection target. The profile prioritises useful contributions, technical discussions, clear issues, cross-reviews, co-authored PRs, strong documentation, reproducible releases and organic external use. It does not create trivial PRs, artificial Discussions, mirror accounts, inflated activity, purchased badges or synthetic stars.
