@@ -113,6 +113,14 @@ This repository is part of the CASTÚO-SYSTEM evidence operating system. Its sta
 | Competitive intelligence | 1/0/?/N/A comparison, 1D/1V/1R semantics, scenarios and sensitivity | Comparative records remain bounded by provenance |
 | External validation | Independent review, reproducible benchmark, field pilot, KPIs and economic evidence | Promotion requires reviewable external evidence |
 
+### Sovereign reference architecture
+
+CASTÚO-SYSTEM uses an explicit authority hierarchy: `todo.md` records the operational backlog; `CASTUO-SYSTEM-OPERATING-INDEX.md` governs architecture, gates and claims; typed contracts and passports define executable semantics; tests, scans, SBOM and benchmarks provide bounded evidence; PR reviews and protected branches govern change; independent, field and economic evidence are required for E3/N5 promotion. A higher-level source is authoritative only within its domain: a README cannot override a contract, a local test cannot convert a remote 403 into zero alerts, and a commit reference is not field evidence.
+
+Ownership is explicit. Platform owns dashboard and contracts; governance owns README and index; assurance owns passports and claims; security owns vault and connectors; repository maintainers own remote Security and quality; independent reviewers and pilot owners own E3/N5 evidence. Every change follows `task → artifact → branch → commit → PR → review/checks → merge → checkpoint → passport`. No automation may self-approve, merge protected branches, register secrets or promote claims without the required gate.
+
+The sovereignty reference is [`docs/governance/CASTUO-SOVEREIGN-REFERENCE-ARCHITECTURE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-SOVEREIGN-REFERENCE-ARCHITECTURE.md). It defines data sovereignty, external dependency boundaries, recovery rules and rollback responsibilities.
+
 ### Claim discipline
 
 `CAPABILITY` is not `EVIDENCE`; `EVIDENCE` is not `MATURITY`; `MATURITY` is not `CLAIM`; and `CLAIM` is not `COMPETITIVE ADVANTAGE`. The binary matrix uses `1D` for primary-source declaration, `1V` for reproducible verification, `1R` for independent reproduction, `?` for unknown, `0` for absent in the tested boundary and `N/A` for non-comparable scope. Unknown is never silently converted into absence or proof.
