@@ -143,6 +143,25 @@ The governed integration currently covers the following evidence-scoped capabili
 | Supply-chain controls | Secret scan, SBOM, dependency scan and local dependency result of 0 advisories | Local green status does not prove remote GitHub Security and quality is 0 |
 | Traky12 integration | 16 remote repositories classified; 14 governed README PRs open and traceable | Protected main branches require review/checks; forks are excluded |
 
+### Maturity Acceleration Program G0→N6
+
+The canonical maturity program prioritises evidence industrialisation over horizontal expansion. The order is `security → remote CI → vertical slice → observability/restore → E3 → pilot → payment → repeatability → N6`; a feature is prioritised only when it closes a P0, P1, P2, E3 or G-COMM gate. The program defines one canonical authority per category: `CASTUO-EVOLUTION` for governance, `Castuo-system` for core, `goldfish`/`Cast-o` for assurance, `castuo-offline-field-operations` for field, `castuo-agro-edge` for edge and `Traky12` for public read-model. Copies, workspaces, experiments and upstream forks are projections or non-canonical surfaces.
+
+| Gate | Current boundary | Exit evidence |
+|---|---|---|
+| `R1-CI-REMOTE` | `BLOCKED` | Remote runner, logs, annotations, artifact, SHA, workflow ID, timestamp and reproducible failure |
+| `P0-SECURITY` | `SECURITY_HOLD` | Backend-only vault, approved provider, rotation, revocation, least privilege, dual approval and audit completeness |
+| `S-001` | `LOCAL RESULT / NO CLAIM` | Offline, duplicate, reorder, conflict, recovery, envelope, review and claim decision |
+| `P1-OPS` | `EVIDENCE_REQUIRED` | Runtime SLOs, incidents, backup/restore checksum and replay |
+| `P1-VENDOR-INDEPENDENCE` | `EVIDENCE_REQUIRED` | Same contract and inputs through Adapter A and Adapter B |
+| `E3/GATE-R1` | `PENDING` | Frozen commit, fixture, instructions, negative tests, envelope and independent reproduction |
+| `N5` | `PENDING` | PILOT-001, baseline, KPI, incident register, signed packets and independent review |
+| `N6/G-COMM` | `BLOCKED` | Paid pilot, renewal, second customer/domain, replacement, multi-tenant hardening and SLA |
+
+Evidence strength is `E0 claimed`, `E1 documented`, `E2 locally verified`, `E3 reproducibly verified`, `E4 independently reproduced`, `E5 field validated` and `E6 commercially validated`. The maturity ceiling follows `N3 ≤ E2`, `N4 ≤ E3`, `N5 requires E5` and `N6 requires E6`. `ECR = backed claims / attempted claims` should approach 1 and `Promotion Debt` should reach 0; until then, claims remain bounded.
+
+The complete program is [`docs/governance/CASTUO-MATURITY-ACCELERATION-PROGRAM.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-MATURITY-ACCELERATION-PROGRAM.md). It freezes scope creep unless a change closes a named gate.
+
 ### Full operating plan transcription
 
 The evolution plan is executed as a controlled chain rather than as an unbounded feature list. **Foundation** establishes repository boundaries, typed contracts, the dashboard and the capability vocabulary. **P0 Secure platform** enforces backend-only credential handling, vault-first intents, least-privilege permissions, rotation, revocation, owner isolation, redacted audit and supply-chain scanning. **P1 Evidence system** formalises sensitivity, provenance, Trust Passports, AI Security Passport, observability, SLOs, backup/restore and diagnostics. **P2 External validation** defines the second implementation, S-001 replay, independent review, field KPIs and economic evidence.
