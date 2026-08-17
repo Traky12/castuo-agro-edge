@@ -135,6 +135,18 @@ The governed integration currently covers the following evidence-scoped capabili
 | Supply-chain controls | Secret scan, SBOM, dependency scan and local dependency result of 0 advisories | Local green status does not prove remote GitHub Security and quality is 0 |
 | Traky12 integration | 16 remote repositories classified; 14 governed README PRs open and traceable | Protected main branches require review/checks; forks are excluded |
 
+### Pending work register
+
+| Workstream | Current state | Exit condition |
+|---|---|---|
+| Remote GitHub Security and quality | `BLOCKED` by `security_events` authorization and 403 | Read both main-branch alert tables with an authorized session and record timestamped results |
+| Vault provider | `SECURITY_HOLD` with provider-neutral adapter | Approve one backend-only provider and pass rotation/revocation/dual-approval tests |
+| Restore and remote diagnostics | `EVIDENCE_REQUIRED` | Complete an isolated restore and a redacted reproducible diagnostic with review |
+| External assurance and field evidence | `EVIDENCE_REQUIRED` | Independent S-001 replay, signed review, field KPIs and economic evidence |
+| README/plan continuity | PR-governed and recoverable from checkpoints | Merge reviewed PRs only after checks and preserve rollback references |
+
+Open tasks are operational work, not proof of capability. They must remain visible until their exit criteria are met.
+
 ### Current boundary
 
 Claims remain evidence-scoped. Do not describe this repository as production-validated, best-in-class, independently reviewed, commercially superior or N5/N6 unless the corresponding passport, evidence package, signed review and gate record are present. The open-gate register is authoritative for vault approval, GitHub security access, remote alerts, production restore, diagnostics and external validation.
