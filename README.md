@@ -147,7 +147,8 @@ Claims remain evidence-scoped. Do not describe this repository as production-val
 | `Competitive Capability Passport` | Capability state, provenance, maturity and forbidden claims |
 | `S-001 benchmark` | Reproducible comparison protocol and promotion boundary |
 | P0/P1/P2 roadmap | Exit criteria and rollback responsibility |
-| Dashboard checkpoint | Restorable implementation state and validation result |
+| `Dashboard checkpoint` | Restorable implementation state and validation result |
+| `CASTUO-SYSTEM-OPERATING-INDEX.md` | Master operating plan, task registry, gates, claims boundary, checkpoints and repository traceability |
 
-This block is a governed integration reference. Repository-specific build, deployment, security and operational instructions remain authoritative in the rest of this README.
+The master operating index is available at [`docs/governance/CASTUO-SYSTEM-OPERATING-INDEX.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-SYSTEM-OPERATING-INDEX.md). This block is a governed integration reference. Repository-specific build, deployment, security and operational instructions remain authoritative in the rest of this README.
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
