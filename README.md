@@ -135,6 +135,22 @@ The governed integration currently covers the following evidence-scoped capabili
 | Supply-chain controls | Secret scan, SBOM, dependency scan and local dependency result of 0 advisories | Local green status does not prove remote GitHub Security and quality is 0 |
 | Traky12 integration | 16 remote repositories classified; 14 governed README PRs open and traceable | Protected main branches require review/checks; forks are excluded |
 
+### Full operating plan transcription
+
+The evolution plan is executed as a controlled chain rather than as an unbounded feature list. **Foundation** establishes repository boundaries, typed contracts, the dashboard and the capability vocabulary. **P0 Secure platform** enforces backend-only credential handling, vault-first intents, least-privilege permissions, rotation, revocation, owner isolation, redacted audit and supply-chain scanning. **P1 Evidence system** formalises sensitivity, provenance, Trust Passports, AI Security Passport, observability, SLOs, backup/restore and diagnostics. **P2 External validation** defines the second implementation, S-001 replay, independent review, field KPIs and economic evidence.
+
+The operational backlog is maintained in `todo.md` and in the master operating index. Each task must preserve an owner, input boundary, expected output, exit criterion, evidence reference and rollback path. Completed work is marked without deleting historical entries. Blocked work remains visible with `BLOCKED`, `SECURITY_HOLD`, `EVIDENCE_REQUIRED` or `NOT_VERIFIED`; an open task is never evidence of capability.
+
+| Control | Required transcription | Promotion rule |
+|---|---|---|
+| Capability | What the system can do and which repository owns it | Do not infer evidence from capability presence |
+| Evidence | Source, contract, test, runtime slice, benchmark or review | Must be reproducible and provenance-linked |
+| Maturity | N1–N6 plus P0/P1/P2 and E3/N5 gates | No maturity promotion without the specified gate |
+| Claim | Exact permitted statement and audience | Default-deny when passport or gate is incomplete |
+| Competitive advantage | Comparative and economic proposition | Prohibited until independent and economic evidence exists |
+
+Every README update is idempotent and PR-governed. The synchronizer updates only the authorised branch, preserves one governed block, excludes forks, records the resulting PR and never writes directly to protected `main`. Recovery uses checkpoints, remote commits and contract artifacts; divergences are reconstructed through a new PR or a named checkpoint, never through destructive history rewriting.
+
 ### Pending work register
 
 | Workstream | Current state | Exit condition |
