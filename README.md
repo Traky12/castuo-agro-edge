@@ -143,6 +143,14 @@ The governed integration currently covers the following evidence-scoped capabili
 | Supply-chain controls | Secret scan, SBOM, dependency scan and local dependency result of 0 advisories | Local green status does not prove remote GitHub Security and quality is 0 |
 | Traky12 integration | 16 remote repositories classified; 14 governed README PRs open and traceable | Protected main branches require review/checks; forks are excluded |
 
+### Canonical public narrative
+
+**CASTÚO-SYSTEM is an evidence-governed control plane for distributed operations and AI-enabled systems, with Evidence-Ready Field Operations as its first commercial wedge.** The first user journey is `Operate offline → preserve evidence → review → export`. This is a bounded product narrative, not a claim of production, customer adoption, field validation or commercial traction.
+
+The public profile is a baseline and read-model: `public baseline → index → claims → evidence links → boundaries`. The 16-repository inventory is one modular system model, not 16 products. Repository roles and authority remain governed by the sovereign reference architecture and operating index.
+
+The confidence progression is `evidence-scoped → independently reproduced → field validated → commercially validated`. The profile does not claim that CASTÚO is better than named competitors, best-in-class, commercially superior, certified, autonomous or revenue-generating without a dated, scope-bound evidence passport. The canonical narrative is [`docs/governance/CASTUO-PUBLIC-NARRATIVE-AND-WEDGE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-PUBLIC-NARRATIVE-AND-WEDGE.md).
+
 ### Maturity Acceleration Program G0→N6
 
 The canonical maturity program prioritises evidence industrialisation over horizontal expansion. The order is `security → remote CI → vertical slice → observability/restore → E3 → pilot → payment → repeatability → N6`; a feature is prioritised only when it closes a P0, P1, P2, E3 or G-COMM gate. The program defines one canonical authority per category: `CASTUO-EVOLUTION` for governance, `Castuo-system` for core, `goldfish`/`Cast-o` for assurance, `castuo-offline-field-operations` for field, `castuo-agro-edge` for edge and `Traky12` for public read-model. Copies, workspaces, experiments and upstream forks are projections or non-canonical surfaces.
