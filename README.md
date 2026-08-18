@@ -349,4 +349,26 @@ CASTÚO-SYSTEM is governed as a distributed rural-operations system with evidenc
 The value staircase is binary: `B01–B03` establish existence, `B04–B05` establish external verifiability, `B06–B07+B10` establish controlled operation, `B08–B09` establish field/transferability evidence, and `B11–B12` establish commercial proof. Current external value remains `3/12`; `B13–B15 = 3/3` are internal controls and are not external value. `B04 / Remote verification` remains the Binary Bottleneck, with Promotion Debt `9` and Critical Promotion Debt `1`.
 
 Every new task must identify the binary it could move from `0` to `1` and the evidence that would prove that transition. Documentation, commits, tests, README coverage and local scans improve readiness and traceability, but they do not by themselves close remote CI, independent reproduction, production runtime, field, commercial or competitive claims. The canonical strategy is [`CASTUO-UNIFIED-STRATEGY-AND-BINARY-PROGRESSION.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-UNIFIED-STRATEGY-AND-BINARY-PROGRESSION.md).
+
+### Official SaaS identity
+
+The CASTÚO official mark is reused as a single branded asset across the dashboard sidebar, topbar, authentication surface, footer, favicon, social metadata and governed PDF context. The implementation uses the shared `BrandLogo` component and `/manus-storage/pasted_file_tFeqhx_Capturadepantallalogotipo_f0a36c2b.png`; it contains no credentials or dynamic secrets. Brand consistency is presentation metadata only and does not promote production, field, security or commercial evidence.
+
+### Sovereign Control Plane v1
+
+CASTÚO-SYSTEM is a sovereign control, trust, data and evidence infrastructure. Education, biotechnology, drones, robotics, medicine and No-GNSS operations are governed capability domains that inherit the same identity, policy, cryptographic integrity, provenance, evidence, Digital Twin, ledger, incident, recovery and binary-gate architecture.
+
+The authorization rule is conjunctive: `ALLOW = I ∧ A ∧ G ∧ D ∧ T ∧ E ∧ R`. Binary controls decide authorization or promotion; cryptography protects confidentiality/authenticity/integrity; the ledger anchors hashes and traceability; and the Digital Twin represents state, simulation and replay. Blockchain, GaiaChain and Trazalia are not described as encryption or complete security solutions. The canonical contracts are linked from `CASTUO-SOVEREIGN-CONTROL-PLANE-REFERENCE-ARCHITECTURE.md`.
+
+The incident sequence is `detect → identity/signature/replay check → policy → deny/quarantine → preserve → alert → rollback/recover → review`. Domains contribute their capability model, data model, workflows and risk profile; they do not create parallel security fabrics. Federation, field, production, regulatory and commercial states remain evidence-gated and are not implied by documentation or local tests.
+
+The complete implementation plan is persisted in `CASTUO-SOVEREIGN-IMPLEMENTATION-PLAN.md`. Local validation for the first increment records secret scan with no credential-shaped literals, dependency scan with zero advisories and an SBOM of 88 direct components. These are local controls and do not close GitHub remote verification, Vault approval, field evidence, assurance or production gates.
+
+### Master Architecture Decision: capability packs and Incident Fabric
+
+CASTÚO-SYSTEM is a **Sovereign Evidence & Trust Control Plane for distributed intelligent systems**. `castuo-evolution` is the authority and governance layer; `Castuo-system` is core execution; `castuo-progress-dashboard` is the observability/management surface; `goldfish` covers security, recovery and assurance; `Cast-o` covers CI and release evidence; edge/offline repositories provide adapters; and `Traky12` remains a limited public read-model.
+
+Education, biotechnology, drones, robotics, medicine and No-GNSS are capability packs, not parallel security platforms. Each pack inherits identity, authorization, device trust, data policy, cryptographic integrity, evidence, audit, recovery and binary gates. A new repository requires an independent ownership, lifecycle, security, deployment or compliance boundary.
+
+`CAP-INCIDENT-001` formalizes the process `DENY → QUARANTINE → INCIDENT-ID → EVIDENCE-HASH → RECOVERY → REVIEW`, including nonce/replay checks, blocked data writes, preserved negative evidence and pending review. This is a governed incident process, not a claim that intrusion is impossible. Clinical functionality remains behind its own regulatory gate; local contracts and tests remain evidence-scoped.
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
