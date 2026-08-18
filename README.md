@@ -305,4 +305,18 @@ The generated source artifact is docs/governance/CASTUO-COMMIT-LINEAGE.md. Its t
 | `CASTUO-SYSTEM-OPERATING-INDEX.md` | Master operating plan, task registry, gates, claims boundary, checkpoints and repository traceability |
 
 The master operating index is available at [`docs/governance/CASTUO-SYSTEM-OPERATING-INDEX.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-SYSTEM-OPERATING-INDEX.md). This block is a governed integration reference. Repository-specific build, deployment, security and operational instructions remain authoritative in the rest of this README.
+
+### Binary Value Rule v1.0
+
+CASTÚO uses a strict 0/1 promotion rule: a condition is `1` only when primary, traceable and reproducible evidence exists within the declared scope; there is no 0.5 for nearly complete work. The current conservative readout is **3/12**: B01 Architecture defined, B02 Capability implemented and B03 Local reproducible test are `1`; B04–B12 remain `0` because remote CI, independent replay, runtime, observability, field, vendor, vault and commercial evidence are not yet verified.
+
+| Level | Critical binaries | State | Result |
+|---|---|---|---|
+| A / existence | B01+B02+B03 | OPEN | Exists and reproduces locally |
+| B / verifiability | B04+B05 | BLOCKED | Remote observation and independent replay required |
+| C / operation | B06+B07+B10 | BLOCKED | Runtime, observability and operational security required |
+| D / field | B08+B09 | BLOCKED | Field validation and vendor independence required |
+| E / business | B11+B12 | BLOCKED | Paid pilot and transferability required |
+
+The immediate critical sequence is `B04 → B05`. A README, planned task, architecture or local test cannot be used to claim remote CI, production runtime, zero remote alerts, field validation, vendor independence, commercial proof or competitive advantage. See [`CASTUO-BINARY-VALUE-RULE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-BINARY-VALUE-RULE.md) for the canonical matrix, evidence requirements, blockers and rollback boundary.
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
