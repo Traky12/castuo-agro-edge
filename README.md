@@ -385,4 +385,8 @@ Local validation snapshot: 101 tests green, TypeScript/build pass, local secret 
 External gates remain evidence-required until execution results are independently recorded. `Displayed ≠ Executed`, `101 tests green ≠ production readiness`, `0 advisories ≠ security assurance`, and `Capability Pack ≠ operational capability`.
 
 Governance gap P0: protection of `main` should be verified and, when approved, require PR, review, status checks, CODEOWNERS, no force-push and no branch deletion. The presence of this recommendation does not prove that the setting is enabled.
+
+### Public profile cleanup specification — 2026-08-18
+
+The public profile cleanup is specified in `CASTUO-PUBLIC-PROFILE-CLEANUP-2026-08-18.md`. It removes duplicate headings and GitHub UI residue, normalizes pinned repositories and explicit links, adds bilingual entry points, clarifies `14 REPOSITORIES PENDING` and preserves local, remote, staging, production, commercial, certification, field and federation boundaries. This is a reviewable PR specification; it does not claim that the profile change has been merged.
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
