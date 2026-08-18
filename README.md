@@ -319,4 +319,19 @@ CASTÚO uses a strict 0/1 promotion rule: a condition is `1` only when primary, 
 | E / business | B11+B12 | BLOCKED | Paid pilot and transferability required |
 
 The immediate critical sequence is `B04 → B05`. A README, planned task, architecture or local test cannot be used to claim remote CI, production runtime, zero remote alerts, field validation, vendor independence, commercial proof or competitive advantage. See [`CASTUO-BINARY-VALUE-RULE.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-BINARY-VALUE-RULE.md) for the canonical matrix, evidence requirements, blockers and rollback boundary.
+
+### Binary Bottleneck and Promotion Debt v1.1
+
+The Binary Value Rule separates **external value** (`B01–B12`) from **internal control** (`B13–B15`). The external readout remains **3/12**: B01 architecture, B02 implementation and B03 local reproducibility are `1`; B04–B12 remain `0`. Internal control is **3/3**: B13 change lineage reproducible, B14 professional identity unambiguous and B15 coherent portfolio with visible claim boundaries. These internal controls strengthen governance and traceability but do not become operational, field, commercial or competitive proof.
+
+The **Binary Bottleneck Rule** states that promotion is determined by the first mandatory binary still at `0`. The current bottleneck is `B04 / Remote verification`. **Promotion Debt** counts mandatory external zeros blocking the next promotion path; the current debt is `9`, while **Critical Promotion Debt** is `1` because B04 is the immediate bottleneck. No capability is partially promoted by percentage, document volume, test count or commit count.
+
+| Scope | Binaries | Readout | Meaning |
+|---|---|---:|---|
+| External value | B01–B12 | 3/12 | Technology value remains bounded by external evidence |
+| Internal control | B13–B15 | 3/3 | Traceability, identity and portfolio coherence are controlled locally |
+| Immediate bottleneck | B04 | 0 | Remote CI/security verification needs authorized evidence |
+| Promotion Debt | B04–B12 zeros | 9 | Mandatory external conditions still block the path |
+
+The next sequence remains `B04 → B05 → B07 → B10 → B06 → B08 → B09 → B11 → B12`. Synthetic vendor parity is not B09 vendor independence, local security is not B10 external security, and a complete ledger is not runtime or field evidence.
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
