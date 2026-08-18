@@ -334,4 +334,12 @@ The **Binary Bottleneck Rule** states that promotion is determined by the first 
 | Promotion Debt | B04–B12 zeros | 9 | Mandatory external conditions still block the path |
 
 The next sequence remains `B04 → B05 → B07 → B10 → B06 → B08 → B09 → B11 → B12`. Synthetic vendor parity is not B09 vendor independence, local security is not B10 external security, and a complete ledger is not runtime or field evidence.
+
+### Unified strategy and binary progression
+
+CASTÚO-SYSTEM is governed as a distributed rural-operations system with evidence governance, assurance, edge and field operations. Its operating principles are: **no claim without provenance; no AI deployment without assurance; no scale without security and observability**. The portfolio is intentionally separated into public baseline (`Traky12`), governance control plane (`castuo-evolution`), CI/evidence (`Cast-o`), security/recovery (`goldfish`), edge (`castuo-agro-edge`), offline field operations (`castuo-offline-field-operations`) and the protected private core (`Castuo-system`). Experimental repositories remain bounded laboratories and do not imply production maturity.
+
+The value staircase is binary: `B01–B03` establish existence, `B04–B05` establish external verifiability, `B06–B07+B10` establish controlled operation, `B08–B09` establish field/transferability evidence, and `B11–B12` establish commercial proof. Current external value remains `3/12`; `B13–B15 = 3/3` are internal controls and are not external value. `B04 / Remote verification` remains the Binary Bottleneck, with Promotion Debt `9` and Critical Promotion Debt `1`.
+
+Every new task must identify the binary it could move from `0` to `1` and the evidence that would prove that transition. Documentation, commits, tests, README coverage and local scans improve readiness and traceability, but they do not by themselves close remote CI, independent reproduction, production runtime, field, commercial or competitive claims. The canonical strategy is [`CASTUO-UNIFIED-STRATEGY-AND-BINARY-PROGRESSION.md`](https://github.com/Traky12/Castuo-system/blob/main/docs/governance/CASTUO-UNIFIED-STRATEGY-AND-BINARY-PROGRESSION.md).
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
