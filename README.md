@@ -371,4 +371,18 @@ CASTÚO-SYSTEM is a **Sovereign Evidence & Trust Control Plane for distributed i
 Education, biotechnology, drones, robotics, medicine and No-GNSS are capability packs, not parallel security platforms. Each pack inherits identity, authorization, device trust, data policy, cryptographic integrity, evidence, audit, recovery and binary gates. A new repository requires an independent ownership, lifecycle, security, deployment or compliance boundary.
 
 `CAP-INCIDENT-001` formalizes the process `DENY → QUARANTINE → INCIDENT-ID → EVIDENCE-HASH → RECOVERY → REVIEW`, including nonce/replay checks, blocked data writes, preserved negative evidence and pending review. This is a governed incident process, not a claim that intrusion is impossible. Clinical functionality remains behind its own regulatory gate; local contracts and tests remain evidence-scoped.
+
+## Capability evolution and dashboard role — 2026-08-18
+
+The progress dashboard is now described within its declared local scope as `GOVERNED_CONTROL_AND_OBSERVABILITY_SURFACE` and as an **Evidence-First Governance, Assurance & Progress Control Surface**. This reflects implemented local contracts and readouts for COMP, capability packs, Incident Fabric, Evidence Graph replay, restore readiness and G0–G10 promotion gates.
+
+`CAP-INCIDENT-001` is implemented and tested within declared local scope: nonce/replay check, deny, quarantine, write block, evidence hash, recovery and review. It is not a claim of total intrusion prevention or production incident response.
+
+CASTÚO-SYSTEM capability packs are bounded modules inheriting common governance, identity, data, evidence, security and promotion semantics. A defined capability pack is not an operationally validated capability. The COMP metamodel is governed and implemented in declared scope, not a full production system metamodel.
+
+Local validation snapshot: 101 tests green, TypeScript/build pass, local secret scan pass, local dependency scan `0 advisories`, and SBOM with 88 direct components. These are dated, scope-bound results. Remote conformance, runtime security assurance, independent review, field validation, production, commercial validation and federation remain pending or not claimed.
+
+External gates remain evidence-required until execution results are independently recorded. `Displayed ≠ Executed`, `101 tests green ≠ production readiness`, `0 advisories ≠ security assurance`, and `Capability Pack ≠ operational capability`.
+
+Governance gap P0: protection of `main` should be verified and, when approved, require PR, review, status checks, CODEOWNERS, no force-push and no branch deletion. The presence of this recommendation does not prove that the setting is enabled.
 <!-- CASTUO-GOVERNED-README-BLOCK:END -->
