@@ -218,6 +218,12 @@ Open tasks are operational work, not proof of capability. They must remain visib
 
 Claims remain evidence-scoped. Do not describe this repository as production-validated, best-in-class, independently reviewed, commercially superior or N5/N6 unless the corresponding passport, evidence package, signed review and gate record are present. The open-gate register is authoritative for vault approval, GitHub security access, remote alerts, production restore, diagnostics and external validation.
 
+### Ledger Explorer and governed export
+
+The dashboard now exposes a read-only **Ledger Explorer** for searching commits by full SHA, subject and timestamp, and for filtering the 14 documentary README PRs by status and governed branch. The visual panel keeps the selected commit and PR detail visible, while the PDF export records the current filtered ledger and README/PR state.
+
+The export is an evidence-scoped operational report generated from `CASTUO-COMMIT-LINEAGE.md`, `TRAKY12-README-SYNC-RESULT.json` and the typed `shared/lineageData.ts` projection. It does not expose secrets, alter GitHub state, merge PRs or assert remote Security and quality status. The current lineage contains 57 commits and the governed README surface remains 14/14 PR-governed.
+
 ### Complete commit lineage
 
 The complete local commit lineage is reproduced below from the project Git history. A commit records repository history only; it is not, by itself, field evidence, deployment evidence, a security-zero result or a commercial claim.
