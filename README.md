@@ -220,7 +220,7 @@ Claims remain evidence-scoped. Do not describe this repository as production-val
 
 ### Ledger Explorer and governed export
 
-The dashboard now exposes a read-only **Ledger Explorer** for searching commits by full SHA, subject and timestamp, and for filtering the 14 documentary README PRs by status and governed branch. The visual panel keeps the selected commit and PR detail visible, while the PDF export records the current filtered ledger and README/PR state.
+The dashboard now exposes a read-only **Ledger Explorer** for searching commits by full SHA, subject and timestamp, and for filtering the 14 documentary README PRs by status and governed branch. It provides **Interactive commit and PR history** with selected-item detail, while the **Export PDF** action records the current filtered ledger and README/PR state.
 
 The export is an evidence-scoped operational report generated from `CASTUO-COMMIT-LINEAGE.md`, `TRAKY12-README-SYNC-RESULT.json` and the typed `shared/lineageData.ts` projection. It does not expose secrets, alter GitHub state, merge PRs or assert remote Security and quality status. The current lineage contains 57 commits and the governed README surface remains 14/14 PR-governed.
 
