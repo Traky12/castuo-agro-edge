@@ -99,3 +99,10 @@ Offline operation uses device identity, encrypted local buffering, an idempotent
 This repository is part of the CASTÚO-SYSTEM private-cloud target architecture. Its repository scope does not by itself prove cloud provisioning, DNS, production operation, customer traction, financing, certification or independent validation. The service identity is a governed target boundary until a deployment record, access control, health check, observability, backup, restore, rollback, owner and dated Evidence Center record are published.
 
 The public state model is `DOCUMENTED` → `IMPLEMENTED_LOCAL` → `TESTED` → `VALIDATED` → `OPERATIONAL`. OpenClaw and n8n, where referenced, are optional compatibility adapters and not the sovereign governance control plane.\n
+
+## Promotion closure / Cierre de promoción
+
+The current CASTÚO posture remains **`PROMOTION = BLOCK` / `LOCAL_RESULT_NO_CLAIM`** until the bounded S-001A slice has an executable contract, portable evidence envelope, independent replay, human review and rollback evidence.
+
+La ruta priorizada, los gaps, los riesgos P0 y los gates de salida están documentados en [`docs/CASTUO_PROMOTION_CLOSURE_PLAN.md`](docs/CASTUO_PROMOTION_CLOSURE_PLAN.md). Este repositorio debe conservar estados evidence-scoped y no elevar `LOCAL`, `PENDING` o `EVIDENCE_REQUIRED` a claims de producción, independencia de proveedor o validación independiente.
+
