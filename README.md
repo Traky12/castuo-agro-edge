@@ -99,3 +99,25 @@ Offline operation uses device identity, encrypted local buffering, an idempotent
 This repository is part of the CASTÚO-SYSTEM private-cloud target architecture. Its repository scope does not by itself prove cloud provisioning, DNS, production operation, customer traction, financing, certification or independent validation. The service identity is a governed target boundary until a deployment record, access control, health check, observability, backup, restore, rollback, owner and dated Evidence Center record are published.
 
 The public state model is `DOCUMENTED` → `IMPLEMENTED_LOCAL` → `TESTED` → `VALIDATED` → `OPERATIONAL`. OpenClaw and n8n, where referenced, are optional compatibility adapters and not the sovereign governance control plane.\n
+
+
+## CASTÚO-SYSTEM — Governed public projection / Proyección pública gobernada
+
+### English
+
+This repository is part of the CASTÚO-SYSTEM governed public projection. The canonical control-plane source is `castuo-evolution`; this README is a bounded read-model and does not replace private evidence. Current local evidence is limited to `LOCAL_RESULT_NO_CLAIM` and declared scope. `N6/G10` remains `TARGET`; independent replay, production, field validation, commercial validation, federation, vendor independence and Gaia-X certification are not claimed without dated external evidence.
+
+Integration semantics remain explicit: **Capability ≠ Evidence ≠ Maturity ≠ Claim ≠ Competitive Advantage**. The permitted promotion path is identity → authority → integrity → evidence → replay → security → reconciliation → review → rollback. Missing evidence blocks promotion.
+
+### Español
+
+Este repositorio forma parte de la proyección pública gobernada de CASTÚO-SYSTEM. La fuente canónica del control plane es `castuo-evolution`; este README es un read-model delimitado y no sustituye la evidencia privada. La evidencia local actual se limita a `LOCAL_RESULT_NO_CLAIM` y al alcance declarado. `N6/G10` permanece como `TARGET`; no se declaran replay independiente, producción, validación de campo, validación comercial, federación, independencia de proveedor ni certificación Gaia-X sin evidencia externa fechada.
+
+La semántica de integración permanece explícita: **Capability ≠ Evidence ≠ Maturity ≠ Claim ≠ Competitive Advantage**. La ruta de promoción permitida es identidad → autoridad → integridad → evidencia → replay → seguridad → reconciliación → revisión → rollback. La ausencia de evidencia bloquea la promoción.
+
+### Release traceability
+
+- Release: `R47 / release/castuo-bilingual-evidence-20260819`
+- Change type: documentation-only, PR-only, no direct push to `main`
+- Source: `castuo-evolution` control-plane; local dashboard preparation
+- Status: prepared for repository-specific review; remote claims remain bounded
