@@ -133,3 +133,19 @@ For public navigation use the [Traky12 profile](https://github.com/Traky12/Traky
 
 `Identity != Documentation != Evidence != Execution != Review != Promotion`
 <!-- CASTUO:PUBLIC-GOVERNANCE:END -->
+
+## CASTÚO-SYSTEM public governance boundary
+
+**Role / Rol:** `EDGE / RUNTIME`
+
+> NO CLAIM WITHOUT PROVENANCE.
+>
+> NINGÚN CLAIM SIN PROVENIENCIA.
+
+This repository covers edge-oriented capability work. Runtime activity does not equal operational truth without an evidence envelope and review.
+
+Este repositorio cubre capacidades orientadas a edge. La actividad del runtime no equivale a verdad operativa sin envelope de evidencia y revisión.
+
+The canonical meaning and promotion rules remain in [`castuo-evolution`](https://github.com/Traky12/castuo-evolution). The public profile is a read-model; this repository does not authorize promotion. Public state remains `EVIDENCE-SCOPED · STAGING-CANDIDATE · PROMOTION-BLOCKED` unless a newer source snapshot explicitly proves otherwise.
+
+La semántica canónica y las reglas de promoción permanecen en [`castuo-evolution`](https://github.com/Traky12/castuo-evolution). El perfil público es un read-model; este repositorio no autoriza la promoción. El estado público permanece `EVIDENCE-SCOPED · STAGING-CANDIDATE · PROMOTION-BLOCKED` salvo que un snapshot posterior lo demuestre explícitamente.
