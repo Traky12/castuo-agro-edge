@@ -1,0 +1,11 @@
+standard_id: CASTUO-REPOSITORY-STANDARD-V1.0
+version: "1.0"
+canonical_repository: Traky12/castuo-evolution
+canonical_path: docs/CASTUO-REPOSITORY-STANDARD-V1.0.md
+vocabulary_source: Traky12/castuo-evolution/governance/master-vocabulary.yaml
+annex_source: Traky12/castuo-evolution/docs/standard-v1.0/
+control_plane: castuo-evolution
+reference_mode: CANONICAL_REFERENCE_NOT_COPY
+validation: castuo-evolution/scripts/validate_repository_conformance.py
+production: NOT_CLAIMED
+promotion: BLOCKED_UNTIL_LOCAL_SCOPE_EVIDENCE
