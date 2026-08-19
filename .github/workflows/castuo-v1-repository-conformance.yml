@@ -1,0 +1,58 @@
+name: CASTUO V1 repository conformance
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-conformance:
+    name: repository-conformance-local-scope
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate declared CASTUO V1 metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f repository.yaml
+          test -f governance/castuo-standard-reference.yaml
+          grep -q 'metadata_source: CASTUO-REPOSITORY-STANDARD-V1.0' repository.yaml
+          grep -q 'current_state:' repository.yaml
+          grep -q 'evidence_state:' repository.yaml
+          grep -q 'production_claim: NOT_CLAIMED' repository.yaml
+          grep -q 'promotion_state: PROMOTION_BLOCKED' repository.yaml
+          grep -q 'standard_id: CASTUO-REPOSITORY-STANDARD-V1.0' governance/castuo-standard-reference.yaml
+          grep -q 'reference_mode: CANONICAL_REFERENCE_NOT_COPY' governance/castuo-standard-reference.yaml
+          grep -q 'production: NOT_CLAIMED' governance/castuo-standard-reference.yaml
+          grep -q 'promotion: BLOCKED_UNTIL_LOCAL_SCOPE_EVIDENCE' governance/castuo-standard-reference.yaml
+
+      - name: Emit bounded conformance result
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/castuo-conformance
+          cat > artifacts/castuo-conformance/result.json <<'JSON'
+          {
+            "standard": "CASTUO-REPOSITORY-STANDARD-V1.0",
+            "scope": "repository metadata and canonical reference only",
+            "status": "PASS",
+            "production": "NOT_CLAIMED",
+            "promotion": "BLOCKED_UNTIL_LOCAL_SCOPE_EVIDENCE",
+            "identity_is_evidence": false,
+            "local_conformance_is_remote_truth": false
+          }
+          JSON
+
+      - name: Upload bounded conformance artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: castuo-v1-repository-conformance
+          path: artifacts/castuo-conformance/result.json
