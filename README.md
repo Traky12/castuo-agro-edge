@@ -25,14 +25,14 @@ castuo-agro-edge acts as the **EDGE** layer, providing field evidence and teleme
 ```text
 castuo-agro-edge (Edge)
      │
-     ├── CASTÚO-SYSTEM (Core)
+     ├── castuo-evidence (Public Fabric)
+     │      Evidence verification surface
+     │
+     ├── CASTÚO-SYSTEM (Private Core)
      │      Upstream sync target
      │
-     ├── ctaex-iot-pilot (Pilot)
-     │      Validation environment
-     │
-     └── GOLDfish (Assurance)
-            Security & validation gate
+     └── castuo-evolution (Control Plane)
+            Governance & SSOT
 ```
 
 ---
@@ -68,7 +68,7 @@ curl http://localhost:8080/health
 ---
 
 ## 6. Navigation
-[← Ecosystem Profile](https://github.com/Traky12) | [→ Core Platform](https://github.com/Traky12/Castuo-system) | [→ Governance](https://github.com/Traky12/castuo-evolution) | [→ Architecture Docs](docs/architecture/EDGE-STACK.md)
+[← Profile](https://github.com/Traky12) | [→ Evidence](https://github.com/Traky12/castuo-evidence) | [→ Governance](https://github.com/Traky12/castuo-evolution) | [→ Architecture Docs](docs/architecture/EDGE-STACK.md)
 
 ---
 
