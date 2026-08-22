@@ -99,3 +99,7 @@ Offline operation uses device identity, encrypted local buffering, an idempotent
 This repository is part of the CASTÚO-SYSTEM private-cloud target architecture. Its repository scope does not by itself prove cloud provisioning, DNS, production operation, customer traction, financing, certification or independent validation. The service identity is a governed target boundary until a deployment record, access control, health check, observability, backup, restore, rollback, owner and dated Evidence Center record are published.
 
 The public state model is `DOCUMENTED` → `IMPLEMENTED_LOCAL` → `TESTED` → `VALIDATED` → `OPERATIONAL`. OpenClaw and n8n, where referenced, are optional compatibility adapters and not the sovereign governance control plane.\n
+
+## CASTÚO evidence-scoped integration
+
+See the [ecosystem integration record](docs/CASTUO_ECOSYSTEM_INTEGRATION_2026-08-22.md) for the current capability, evidence, security and promotion boundary.
