@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Traky12/castuo-agro-edge/evidence_bridge/schemas/telemetry_event.schema.json",
+  "title": "TelemetryEvent",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "source_system",
+    "source_event_id",
+    "operation_scope_id",
+    "metric",
+    "value",
+    "unit",
+    "occurred_at",
+    "ingestion_mode",
+    "schema_version"
+  ],
+  "definitions": {
+    "provenance": {
+      "type": "string",
+      "enum": ["PROVIDED", "GENERATED_BY_BRIDGE", "DERIVED", "UNKNOWN", "NOT_AVAILABLE"]
+    }
+  },
+  "properties": {
+    "event_id": { "type": "string", "minLength": 1 },
+    "event_type": { "type": "string", "default": "TELEMETRY_READING" },
+    "source_system": { "type": "string", "minLength": 1 },
+    "source_event_id": { "type": "string", "minLength": 1 },
+    "operation_scope_id": { "type": "string", "minLength": 1 },
+    "device_id": { "type": ["string", "null"] },
+    "device_id_status": { "$ref": "#/definitions/provenance" },
+    "metric": { "type": "string", "minLength": 1 },
+    "value": { "type": "number" },
+    "unit": { "type": "string", "minLength": 1 },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "occurred_at_status": { "$ref": "#/definitions/provenance" },
+    "received_at": { "type": ["string", "null"], "format": "date-time" },
+    "received_at_status": { "$ref": "#/definitions/provenance" },
+    "sequence_number": { "type": ["integer", "null"] },
+    "sequence_status": { "$ref": "#/definitions/provenance" },
+    "source_config_version": { "type": ["string", "null"] },
+    "ingestion_mode": { "type": "string", "enum": ["READ_ONLY"] },
+    "payload_hash": { "type": ["string", "null"] },
+    "previous_event_hash": { "type": ["string", "null"] },
+    "schema_version": { "type": "string" },
+    "qms_reference": { "type": ["string", "null"] },
+    "qms_reference_status": { "$ref": "#/definitions/provenance" },
+    "review_status": { "type": "string", "enum": ["PENDING", "REVIEWED"] }
+  }
+}
