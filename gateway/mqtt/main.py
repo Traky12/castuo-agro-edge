@@ -58,6 +58,7 @@ def handle_stop(*_):
     stop_event.set()
 
 def main():
+    ensure_real_identity()  # CASTUO_ENV=production must not run with demo-* identities
     signal.signal(signal.SIGINT, handle_stop)
     signal.signal(signal.SIGTERM, handle_stop)
 
