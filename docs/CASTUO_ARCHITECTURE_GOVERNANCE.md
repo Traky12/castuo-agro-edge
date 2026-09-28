@@ -5,7 +5,8 @@
 - **Role:** EDGE
 - **Function:** Offline-first, MQTT, sensores y gateway
 - **Repository visibility:** PUBLIC
-- **Control plane:** [`castuo-evolution`](https://github.com/Traky12/castuo-evolution)
+- **Canonical authority:** `Castuo-system` (private) — current authority for code, operational documentation and technical evolution
+- **`castuo-evolution`:** prepared external surface; not the current GitHub authority nor a synchronised SSOT
 - **Public evidence index:** [`Traky12/Traky12`](https://github.com/Traky12/Traky12)
 - **Evidence Center:** [`evidence-center`](https://github.com/Traky12/Traky12/tree/main/evidence-center)
 
