@@ -60,12 +60,17 @@ Statuses use the CASTÚO taxonomy: `CURRENT` (implemented and verifiable) · `TA
 | Claim | Status | Evidence / limitation |
 |---|---|---|
 | Gateway health endpoint (`/health`, offline-capable flag) | `CURRENT` | `tests/unit/test_health.py`: 1 passed (commit `73db95d`, local, 2026-09-28) |
-| MQTT ingestion (`gateway/mqtt/`) | `PENDING` | Code present; no tests or execution evidence |
-| Local offline buffering (`gateway/buffering/store.py`) | `PENDING` | Code present; no tests or execution evidence |
-| Upstream sync (`gateway/sync/upstream.py`) | `PENDING` | Code present; no tests or execution evidence |
-| Raspberry Pi / ESP32 support | `PENDING` | Dockerfile, systemd unit and ESP32 firmware present; no hardware run evidence |
+| MQTT ingestion (`gateway/mqtt/`) | `PENDING` — implemented, unverified | Code present; no tests or execution evidence |
+| Local offline buffering (`gateway/buffering/store.py`) | `PENDING` — implemented, unverified | Code present; no tests or execution evidence |
+| Upstream sync (`gateway/sync/upstream.py`) | `PENDING` — implemented, unverified | Code present; no tests or execution evidence |
+| Raspberry Pi gateway (Dockerfile, systemd unit) | `PENDING` — implemented, unverified | No hardware run evidence |
+| ESP32 firmware (`firmware/`) | `EXPERIMENTAL` | Sketch present; no hardware run evidence |
 | Field telemetry from a real deployment | `NOT_CLAIMED` | No real field data yet |
+| Integration with `castuo-evolution` | `NOT_CLAIMED` | No verifiable mechanism |
+| Security baseline | `PENDING` — documented, not validated | [`SECURITY.md`](SECURITY.md) and `docs/CASTUO_ARCHITECTURE_GOVERNANCE.md`; no security testing evidence |
 | End-to-end sync with GaiaChain / Core | `TARGET` | Not implemented |
+
+Code being present does not mean a capability is validated.
 
 Maturity is governed in `Castuo-system` (private), the canonical authority.
 
