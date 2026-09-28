@@ -19,3 +19,23 @@ API_KEY = os.getenv("API_KEY", "")
 DEVICE_ID = os.getenv("DEVICE_ID", "demo-device-001")
 POLL_INTERVAL = int(os.getenv("POLL_INTERVAL", "30"))
 SYNC_BATCH = int(os.getenv("SYNC_BATCH", "100"))
+
+CASTUO_ENV = os.getenv("CASTUO_ENV", "")
+PRODUCTION_ENVS = {"production", "prod"}
+DEMO_PREFIX = "demo-"
+
+
+class DemoIdentityInProductionError(RuntimeError):
+    """Raised when production would start with demo-* identities."""
+
+
+def ensure_real_identity():
+    """Refuse to run in production with demo identities (set them in the env file)."""
+    if CASTUO_ENV.strip().lower() not in PRODUCTION_ENVS:
+        return
+    demo = [name for name, value in (("MQTT_CLIENT_ID", MQTT_CLIENT_ID), ("DEVICE_ID", DEVICE_ID))
+            if value.startswith(DEMO_PREFIX)]
+    if demo:
+        raise DemoIdentityInProductionError(
+            f"CASTUO_ENV={CASTUO_ENV}: set real values for {', '.join(demo)} (demo-* not allowed in production)"
+        )
