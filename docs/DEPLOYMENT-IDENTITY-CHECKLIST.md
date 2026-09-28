@@ -26,6 +26,7 @@ the start of `gateway/mqtt/main.py:main()`) and a validator on
 | systemd `gateway/mqtt/castuo-mqtt-gateway.service` | `EnvironmentFile=/opt/castuo-edge/.env` | Yes, if that file does not set the variables |
 | `docker-compose.yml` | `env_file` / `environment:` | Yes, if not set there |
 | Raspberry Pi bootstrap script in the private `Castuo-system` repo | Its own embedded gateway (does not use this repository's code) | **No** |
+| `apps/edge-gateway/` + `setup-pi.sh` in the private `Castuo-system` repo | A divergent copy of the gateway with different variable names (`MQTT_BROKER`, `BACKEND_API_KEY`); it does not clone this repository | **No** |
 
 ## Owner confirmation (fill in before merge)
 
@@ -39,3 +40,16 @@ the start of `gateway/mqtt/main.py:main()`) and a validator on
 
 If no gateway running this code exists yet, record "none deployed" with the
 date. As of 2026-09-28 no real field data has been produced.
+
+## Repository evidence (2026-09-28, read-only)
+
+No deployment of **this repository's** code was identified in the
+repositories: this repo has no releases, tags or deploy workflows, and the
+two installation paths found in `Castuo-system` use their own gateway code
+(see the table above). Runtime hosts and physical gateways were **not**
+inspected: access to production requires explicit owner confirmation.
+
+Proposed statement once the owner confirms: *"No known deployment of
+castuo-agro-edge depends on the historical default values. Future production
+deployments must declare MQTT_CLIENT_ID, DEVICE_ID and SITE_ID through
+environment variables or explicit configuration files."*
