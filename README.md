@@ -8,6 +8,14 @@
 
 ---
 
+## Architectural identity
+
+- **Architectural name:** `castuo-edge-telemetry`
+- **Role:** Edge/IoT telemetry, local buffering and device integration.
+- **Boundary:** Declared edge and telemetry scope; product-market regulatory applicability remains assessment-dependent.
+- **Status:** `CURRENT` within declared scope.
+- **Quality profile:** [`.castuo/repository-profile.yaml`](.castuo/repository-profile.yaml)
+
 ## 1. Purpose & Scope
 **castuo-agro-edge** is the operational edge layer of the ecosystem. It is designed to run in environments where connectivity is unreliable, sovereignty matters, and telemetry must survive disconnections.
 
