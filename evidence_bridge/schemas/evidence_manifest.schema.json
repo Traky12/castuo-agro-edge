@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Traky12/castuo-agro-edge/evidence_bridge/schemas/evidence_manifest.schema.json",
+  "title": "EvidenceManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifest_id", "operation_scope_id", "generated_at", "entries", "manifest_hash"],
+  "properties": {
+    "manifest_id": { "type": "string", "minLength": 1 },
+    "operation_scope_id": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "payload_hash"],
+        "properties": {
+          "event_id": { "type": "string", "minLength": 1 },
+          "payload_hash": { "type": "string", "minLength": 1 },
+          "previous_event_hash": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "manifest_hash": { "type": "string", "minLength": 1 }
+  }
+}

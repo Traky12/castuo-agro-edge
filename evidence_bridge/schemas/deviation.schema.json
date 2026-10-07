@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Traky12/castuo-agro-edge/evidence_bridge/schemas/deviation.schema.json",
+  "title": "Deviation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["deviation_id", "operation_scope_id", "triggering_event_id", "opened_at", "description"],
+  "definitions": {
+    "provenance": {
+      "type": "string",
+      "enum": ["PROVIDED", "GENERATED_BY_BRIDGE", "DERIVED", "UNKNOWN", "NOT_AVAILABLE"]
+    }
+  },
+  "properties": {
+    "deviation_id": { "type": "string", "minLength": 1 },
+    "operation_scope_id": { "type": "string", "minLength": 1 },
+    "triggering_event_id": { "type": "string", "minLength": 1 },
+    "opened_at": { "type": "string", "format": "date-time" },
+    "description": { "type": "string", "minLength": 1 },
+    "status": { "type": "string", "enum": ["OPEN", "UNDER_REVIEW", "CLOSED"], "default": "OPEN" },
+    "qms_reference": { "type": ["string", "null"] },
+    "qms_reference_status": { "$ref": "#/definitions/provenance" }
+  }
+}
