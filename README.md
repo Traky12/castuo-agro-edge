@@ -14,6 +14,14 @@
 
 ---
 
+## Architectural identity
+
+- **Architectural name:** `castuo-edge-telemetry`
+- **Role:** Edge/IoT telemetry, local buffering and device integration.
+- **Boundary:** Declared edge and telemetry scope; product-market regulatory applicability remains assessment-dependent.
+- **Status:** `CURRENT` within declared scope.
+- **Quality profile:** [`.castuo/repository-profile.yaml`](.castuo/repository-profile.yaml)
+
 ## 1. Purpose & Scope
 **castuo-agro-edge** is the operational edge layer of the ecosystem. It is designed to run in environments where connectivity is unreliable, sovereignty matters, and telemetry must survive disconnections.
 
@@ -31,14 +39,14 @@ castuo-agro-edge acts as the **EDGE** layer, providing field evidence and teleme
 ```text
 castuo-agro-edge (Edge)
      │
-     ├── CASTÚO-SYSTEM (Core)
+     ├── castuo-evidence (Public Fabric)
+     │      Evidence verification surface
+     │
+     ├── CASTÚO-SYSTEM (Private Core)
      │      Upstream sync target
      │
-     ├── ctaex-iot-pilot (Pilot)
-     │      Validation environment
-     │
-     └── GOLDfish (Assurance)
-            Security & validation gate
+     └── castuo-evolution (experimental)
+            Governance framework — not the current SSOT
 ```
 
 ---
@@ -60,7 +68,7 @@ Following the **Evidence-First** principle, this repository focuses on providing
 - **Implemented:** MQTT ingestion, local buffering, and Pi gateway support.
 - **Planned:** Full end-to-end synchronization with GaiaChain/Core.
 
-Maturity is tracked through the **G0-G7 Gates** in the governance plane (`castuo-evolution`).
+Maturity is tracked through the **G0-G7 Gates** defined in the canonical governance of CASTÚO-SYSTEM (`Castuo-system/governance/`, private). `castuo-evolution` is an experimental governance and evolution framework; it is not the current source of truth or a deployed control plane.
 
 ---
 
@@ -74,7 +82,7 @@ curl http://localhost:8080/health
 ---
 
 ## 6. Navigation
-[← Ecosystem Profile](https://github.com/Traky12) | [→ Core Platform](https://github.com/Traky12/Castuo-system) | [→ Governance](https://github.com/Traky12/castuo-evolution) | [→ Architecture Docs](docs/architecture/EDGE-STACK.md)
+[← Profile](https://github.com/Traky12) | [→ Evidence](https://github.com/Traky12/castuo-evidence) | [→ Governance framework (experimental)](https://github.com/Traky12/castuo-evolution) | [→ Architecture Docs](docs/architecture/EDGE-STACK.md)
 
 ---
 
@@ -88,7 +96,9 @@ curl http://localhost:8080/health
 
 This repository is governed through the CASTÚO-SYSTEM evidence chain. Its current role, visibility boundary, required provenance, security baseline and promotion rules are defined in [`docs/CASTUO_ARCHITECTURE_GOVERNANCE.md`](docs/CASTUO_ARCHITECTURE_GOVERNANCE.md). A repository artifact or green workflow proves only the declared scope; it does not by itself prove certification, production operation, funding, customer contracts or commercial success.
 
-## Federated edge operation
+## Edge operation and federation readiness (TARGET)
+
+> **Federation is a TARGET, not a current capability.** No second real node, tested exchange or synchronisation evidence has been verified (`FEDERATION_PENDING`).
 
 The edge node is an independent trust boundary. Its readiness model is explicit:
 
@@ -98,7 +108,7 @@ The edge node is an independent trust boundary. Its readiness model is explicit:
 | `PILOT_PREPARED` | A bounded field protocol and evidence package are prepared |
 | `FEDERATION_PENDING` | No second real node, tested exchange or synchronisation evidence has yet been verified |
 
-Offline operation uses device identity, encrypted local buffering, an idempotent queue, replay protection, revocation and preserved conflicts. Connectivity loss must not turn an unapproved critical action into an approved one. Physical actuation remains blocked without current policy authorisation and, when required, human approval.
+Target design for offline operation (not a statement of what is implemented; see the evidence links for verified scope): device identity, encrypted local buffering, an idempotent queue, replay protection, revocation and preserved conflicts. Connectivity loss must not turn an unapproved critical action into an approved one. Physical actuation remains blocked without current policy authorisation and, when required, human approval.
 
 ## Private-cloud and evidence boundary
 
