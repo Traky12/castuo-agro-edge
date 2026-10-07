@@ -52,7 +52,7 @@ jobs:
 
       - name: Upload bounded conformance artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: castuo-v1-repository-conformance
           path: artifacts/castuo-conformance/result.json
