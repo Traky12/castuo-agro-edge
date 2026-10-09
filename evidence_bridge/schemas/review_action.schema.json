@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/Traky12/castuo-agro-edge/evidence_bridge/schemas/review_action.schema.json",
+  "title": "ReviewAction",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["action_id", "deviation_id", "actor_id", "action_type", "description", "recorded_at"],
+  "definitions": {
+    "provenance": {
+      "type": "string",
+      "enum": ["PROVIDED", "GENERATED_BY_BRIDGE", "DERIVED", "UNKNOWN", "NOT_AVAILABLE"]
+    }
+  },
+  "properties": {
+    "action_id": { "type": "string", "minLength": 1 },
+    "deviation_id": { "type": "string", "minLength": 1 },
+    "actor_id": { "type": "string", "minLength": 1 },
+    "actor_id_status": { "$ref": "#/definitions/provenance" },
+    "action_type": { "type": "string", "enum": ["OBSERVATION", "ACTION", "CLOSURE"] },
+    "description": { "type": "string", "minLength": 1 },
+    "recorded_at": { "type": "string", "format": "date-time" }
+  }
+}
