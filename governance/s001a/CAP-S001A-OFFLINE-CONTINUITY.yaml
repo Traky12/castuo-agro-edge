@@ -1,0 +1,53 @@
+schema_version: "1.0.0"
+contract_id: "CAP-S001A-OFFLINE-CONTINUITY"
+capability_id: "S-001A"
+name: "Evidence-preserving local continuity under connectivity loss"
+owner: "CASTUO-EVOLUTION"
+scope:
+  execution_mode: "LOCAL_ONLY"
+  production_claim: false
+  environments: [SYNTHETIC, CONTROLLED]
+  claim_boundary: "LOCAL_RESULT_NO_CLAIM"
+required_behavior:
+  - local_operation_continues_when_network_is_unavailable
+  - local_identity_and_cached_policy_remain_available
+  - local_event_is_durable_and_evidence_preserved
+  - buffering_is_idempotent_and_deduplicated
+  - temporal_integrity_is_retained
+  - synchronization_occurs_after_recovery
+  - conflict_and_rollback_paths_are_defined
+failure_policy:
+  network_loss: [DEGRADE, BUFFER]
+  integrity_failure: [QUARANTINE, BLOCKED]
+  policy_or_identity_failure: [DENY, REVIEW]
+  unrecoverable_state: [RECOVERY_REQUIRED, ROLLBACK]
+evidence:
+  fixture: "governance/evidence/E3-001-S001A/fixtures/S-001A-frozen-fixture.json"
+  manifest: "governance/evidence/E3-001-S001A/e3-manifest.yaml"
+  replay_required: true
+  foreign_verifier_required: true
+  canonicalization_required: true
+  hash_or_signature_required: true
+security:
+  negative_tests_required: true
+  secret_scan_required: true
+  dependency_scan_required: true
+  authority_bounded: true
+sovereignty:
+  provider_exit_required: false
+  exportable_evidence_required: true
+  offline_execution_required: true
+resilience:
+  recovery_required: true
+  rollback_required: true
+  evidence_loss_max: 0
+review:
+  human_review_required: true
+  independent_review_required_for_1r: true
+promotion:
+  predicate: "capability && evidence && replay && security && sovereignty && resilience && review && rollback"
+  allowed_outputs: [PROMOTE, BLOCK, REVIEW, ROLLBACK]
+  unknown_state: BLOCK
+  current_state: BLOCKED
+  current_claim: LOCAL_RESULT_NO_CLAIM
+  next_gate: F2
