@@ -1,0 +1,88 @@
+# GENERATED — DO NOT EDIT
+# Source: Traky12/Castuo-system scripts/governance/generate_castuo_status.py @ f538d9ce740f
+# Changes must be made in the central registries of Castuo-system and regenerated.
+schema: castuo-status/v0.1
+source:
+  repository: Traky12/Castuo-system
+  visibility: private
+  publicly_verifiable: false
+  commit: f538d9ce740f754a3e8ba96147eeff96de4f0fba
+  date: '2026-09-28'
+  on_main: false
+  generator: scripts/governance/generate_castuo_status.py
+authority:
+  canonical_source: Traky12/Castuo-system
+  rule: This file is a projection. Castuo-system registries decide; this repository does not redefine
+    state.
+repository:
+  name: castuo-agro-edge
+  lifecycle: active
+  layer: '3'
+  declared_role: Edge/IoT offline-first (buffering, sync, telemetría)
+  ecosystem_status: 'DECLARED · federado: data/external_repositories.yaml (SHA fijado)'
+capabilities_status: REGISTERED
+capabilities:
+- id: EDGE-001
+  name: Ingesta MQTT / MQTT ingestion
+  maturity: N3
+  target_maturity: N5
+  evidence_state: EVIDENCED
+  coverage: PARTIAL
+  next_promotion:
+    from: N3
+    to: N4
+    result: REJECTED
+    reasons:
+    - 'N-PROM-01: sin artefacto local real para destino N4'
+- id: EDGE-002
+  name: Buffering local offline-first
+  maturity: N3
+  target_maturity: N5
+  evidence_state: EVIDENCED
+  coverage: PARTIAL
+  next_promotion:
+    from: N3
+    to: N4
+    result: REJECTED
+    reasons:
+    - 'N-PROM-01: sin artefacto local real para destino N4'
+- id: EDGE-003
+  name: Firmware ESP32
+  maturity: N2
+  target_maturity: N5
+  evidence_state: PREPARED
+  coverage: NONE
+  next_promotion:
+    from: N2
+    to: N3
+    result: REJECTED
+    reasons:
+    - 'N-PROM-01: sin artefacto local real para destino N3'
+- id: EDGE-004
+  name: Gateway Raspberry Pi
+  maturity: N3
+  target_maturity: N5
+  evidence_state: PARTNER
+  coverage: PARTIAL
+  next_promotion:
+    from: N3
+    to: N4
+    result: REJECTED
+    reasons:
+    - 'N-PROM-01: sin artefacto local real para destino N4'
+external_evidence_root:
+  pinned_ref: 884c526661a238c63b70f00cf4af9dd65c3402a3
+  required_for_strict: false
+  verification: RESOLVED_NOT_VERIFIED
+security_baseline_score: null
+license_status: null
+claim_boundary:
+- maturity and evidence_state are copied from the central registry, not re-measured here
+- a green workflow in this repository does not validate a capability
+- production, field validation and commercial validation are NOT_CLAIMED unless the registry says otherwise
+  with evidence
+known_unknowns:
+- 'external evidence pinned_ref=884c526661a238c63b70f00cf4af9dd65c3402a3 is RESOLVED_NOT_VERIFIED: registry
+  evidence_state is not re-verified against the repository''s current HEAD'
+- 'security_baseline_score: no central source merged (repo baseline report, PR #399)'
+- 'license_status: no central source merged (asset matrix, PR #397)'

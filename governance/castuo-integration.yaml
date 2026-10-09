@@ -1,0 +1,14 @@
+schema_version: "1.0.0"
+ecosystem: "CASTUO-SYSTEM"
+repository: "castuo-agro-edge"
+role: "edge"
+capability: "S-001A"
+contract: "CAP-S001A-OFFLINE-CONTINUITY"
+execution_mode: "LOCAL_ONLY"
+claim_boundary: "LOCAL_RESULT_NO_CLAIM"
+promotion: "BLOCKED"
+owner: "PENDING"
+evidence_reference: "PENDING_REPOSITORY_ADAPTATION"
+next_gate: "INDEPENDENT_REVIEW_AND_AUTHORIZED_ROLLBACK"
+secrets_in_repository: false
+production_claim: false

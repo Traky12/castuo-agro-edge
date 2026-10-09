@@ -1,0 +1,38 @@
+schema_version: "1.0.0"
+simulation_id: "S-001A-ROLLBACK-LOCAL-001"
+capability_id: "S-001A"
+execution_mode: "LOCAL_ONLY"
+production_claim: false
+scope: "controlled_local_state_only"
+preconditions:
+  - trusted_state_created
+  - trusted_state_hash_recorded
+  - evidence_history_immutable
+  - no_remote_side_effects
+fault_injection:
+  type: "tampered_state_and_incompatible_policy"
+  expected_detection: true
+  expected_decision: "QUARANTINE_OR_BLOCK"
+rollback_sequence:
+  - DETECT
+  - CONTAIN
+  - PRESERVE_EVIDENCE
+  - AUTHORIZE_ROLLBACK
+  - RESTORE_LAST_KNOWN_GOOD
+  - VERIFY
+  - RETEST
+  - REPLAY
+acceptance:
+  new_recovery_run: true
+  historical_execution_overwrite: false
+  evidence_preservation: true
+  provenance_continuity: true
+  scope_continuity: true
+  restored_state_hash_equals_trusted_hash: true
+  retest_required: true
+  claim_boundary: "LOCAL_RESULT_NO_CLAIM"
+limits:
+  - "No production deployment was changed."
+  - "No remote provider, credential or field node was affected."
+  - "This simulation does not close independent review."
+  - "Operational rollback remains pending until an authorized owner executes an environment-representative exercise."
