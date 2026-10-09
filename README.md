@@ -7,10 +7,12 @@
 # 📡 castuo-agro-edge — Resilient Rural IoT Stack
 
 ![Status](https://img.shields.io/badge/Status-Active%20Engineering-blue)
-![Maturity](https://img.shields.io/badge/Maturity-v0.1%20(Impl)-informational)
-![License](https://img.shields.io/badge/License-Pending-lightgrey)
+![Claims](https://img.shields.io/badge/Claims-see%20status%20table-informational)
+![License](https://img.shields.io/badge/License-Pending%20IP%20review-lightgrey)
 
 > **Offline-first rural edge computing stack for agritech and environmental monitoring.**
+
+> **License: pending IP review.** This repository is **not** open source. Its `LICENSE` file states "License Pending … All rights reserved until a license is selected"; no license has been granted and the rights holder is still to be formally identified. External contributions are not accepted until a contributor licence agreement (CLA) or contribution policy is defined.
 
 ---
 
@@ -34,7 +36,7 @@ Its scope covers:
 ---
 
 ## 2. Ecosystem Position
-castuo-agro-edge acts as the **EDGE** layer, providing field evidence and telemetry to the core platform.
+castuo-agro-edge is designed as the **EDGE** layer that will provide field telemetry to the core platform. No real field data has been produced yet.
 
 ```text
 castuo-agro-edge (Edge)
@@ -48,6 +50,8 @@ castuo-agro-edge (Edge)
      └── castuo-evolution (experimental)
             Governance framework — not the current SSOT
 ```
+
+**Canonical authority:** `Castuo-system` (private) is the current authority for code, operational documentation and technical evolution. `castuo-evolution` is a prepared external surface.
 
 ---
 
@@ -64,9 +68,22 @@ castuo-agro-edge (Edge)
 ---
 
 ## 4. Engineering & Evidence
-Following the **Evidence-First** principle, this repository focuses on providing reproducible field data.
-- **Implemented:** MQTT ingestion, local buffering, and Pi gateway support.
-- **Planned:** Full end-to-end synchronization with GaiaChain/Core.
+Statuses use the CASTÚO taxonomy: `CURRENT` (implemented and verifiable) · `TARGET` (approved, not implemented) · `EXPERIMENTAL` · `PENDING` (planned, or evidence incomplete) · `NOT_CLAIMED`.
+
+| Claim | Status | Evidence / limitation |
+|---|---|---|
+| Gateway health endpoint (`/health`, offline-capable flag) | `CURRENT` | `tests/unit/test_health.py`: 1 passed (commit `73db95d`, local, 2026-09-28) |
+| MQTT ingestion (`gateway/mqtt/`) | `PENDING` — implemented, unverified | Code present; no tests or execution evidence |
+| Local offline buffering (`gateway/buffering/store.py`) | `PENDING` — implemented, unverified | Code present; no tests or execution evidence |
+| Upstream sync (`gateway/sync/upstream.py`) | `PENDING` — implemented, unverified | Code present; no tests or execution evidence |
+| Raspberry Pi gateway (Dockerfile, systemd unit) | `PENDING` — implemented, unverified | No hardware run evidence |
+| ESP32 firmware (`firmware/`) | `EXPERIMENTAL` | Sketch present; no hardware run evidence |
+| Field telemetry from a real deployment | `NOT_CLAIMED` | No real field data yet |
+| Integration with `castuo-evolution` | `NOT_CLAIMED` | No verifiable mechanism |
+| Security baseline | `PENDING` — documented, not validated | [`SECURITY.md`](SECURITY.md) and `docs/CASTUO_ARCHITECTURE_GOVERNANCE.md`; no security testing evidence |
+| End-to-end sync with GaiaChain / Core | `TARGET` | Not implemented |
+
+Code being present does not mean a capability is validated.
 
 Maturity is tracked through the **G0-G7 Gates** defined in the canonical governance of CASTÚO-SYSTEM (`Castuo-system/governance/`, private). `castuo-evolution` is an experimental governance and evolution framework; it is not the current source of truth or a deployed control plane.
 
