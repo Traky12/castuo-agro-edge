@@ -392,7 +392,7 @@ Every new task must identify the binary it could move from `0` to `1` and the ev
 
 ### Official SaaS identity
 
-The CASTÚO official mark is reused as a single branded asset across the dashboard sidebar, topbar, authentication surface, footer, favicon, social metadata and governed PDF context. The implementation uses the shared `BrandLogo` component and `/manus-storage/pasted_file_tFeqhx_Capturadepantallalogotipo_f0a36c2b.png`; it contains no credentials or dynamic secrets. Brand consistency is presentation metadata only and does not promote production, field, security or commercial evidence.
+The CASTÚO official mark is reused as a single branded asset across the dashboard sidebar, topbar, authentication surface, footer, favicon, social metadata and governed PDF context. The implementation uses the shared `BrandLogo` component and `/manus-storage/pasted_file_tFeqhx_Capturadepantallalogotipo_f0a36c2b.png`; it contains no credentials or dynamic secrets. Visual consistency is presentation metadata only; it does not change claims about deployment, field validation, security or commercial evidence.
 
 ### Sovereign Control Plane v1
 
