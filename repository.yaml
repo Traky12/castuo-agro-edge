@@ -5,11 +5,13 @@ visibility: PUBLIC
 purpose: rural edge continuity
 owner: Traky12
 lifecycle: ACTIVE
+current_state: CANDIDATE
 implementation_state: CANDIDATE
 assurance_level: L0_CONTRACT_DEFINED
 evidence_state: EVIDENCE_PENDING
 security_state: EVIDENCE_PENDING
 promotion_state: PROMOTION_BLOCKED
+production_claim: NOT_CLAIMED
 environment: STAGING
 claims_allowed:
   - documented repository role within declared scope
