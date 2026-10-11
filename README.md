@@ -133,36 +133,39 @@ This repository is part of the CASTÚO-SYSTEM private-cloud target architecture.
 
 The public state model is `DOCUMENTED` → `IMPLEMENTED_LOCAL` → `TESTED` → `VALIDATED` → `OPERATIONAL`. OpenClaw and n8n, where referenced, are optional compatibility adapters and not the sovereign governance control plane.\n
 
-<!-- CASTUO:PUBLIC-SURFACE -->
-## CASTÚO integration boundary
+<!-- CASTUO-GOVERNED-README-BLOCK:START -->
+## CASTÚO-SYSTEM evidence and claim boundary
 
-This repository exposes only a bounded public integration surface. Its role, current state and claims are subordinate to the `Traky12/castuo-evolution` control plane.
+This repository is the edge/IoT adapter surface for local telemetry and rural connectivity constraints. A repository description, test result or green workflow proves only the exact scope tested; it does not prove field operation, independent assurance or production readiness.
 
-This repository does not by itself claim production operation, certification, independent validation, customer contracts, revenue, autonomous authority, global federation or legal compliance. Do not publish secrets, credentials, private endpoints, customer data, private evidence or unpublished security findings.
+### Authority and repository roles
 
-See [`docs/CASTUO_PUBLIC_SURFACE.md`](docs/CASTUO_PUBLIC_SURFACE.md) for the public boundary. `Claim != Evidence`; `CURRENT != TARGET`; promotion requires control-plane authorization.
-<!-- CASTUO:PUBLIC-SURFACE-END -->
+- **Canonical technical state, governance and promotion decisions:** [Traky12/Castuo-system](https://github.com/Traky12/Castuo-system) (private authority).
+- **Public offline evidence verification:** [castuo-e3-001 / e3bundle](https://github.com/Traky12/castuo-e3-001). It verifies declared file integrity and signatures; it is not a certification authority or a source of field evidence by itself.
+- **Assurance and CI tooling:** [goldfish](https://github.com/Traky12/goldfish) and [Cast-o](https://github.com/Traky12/Cast-o); local or automated results remain bounded to their recorded checks.
+- **castuo-evolution:** experimental/historical governance material; it is not the current technical authority for this repository.
 
-<!-- CASTUO-PUBLIC-INTEGRATION:START -->
-## CASTÚO-SYSTEM public integration
+### Current evidence boundary
 
-**Repository role:** Edge layer.
+| Dimension | Current declared state |
+|---|---|
+| Repository role | Edge / IoT integration |
+| Implementation maturity | Candidate; only explicitly tested behavior may be called implemented |
+| Evidence and security | Evidence pending outside the checks recorded on each commit |
+| Field pilot and multi-node federation | Pending independent, replayable field evidence |
+| Production, certification and commercial validation | Not claimed |
+| Promotion | Blocked until scope-specific evidence, review and rollback criteria are satisfied |
 
-Capacidades edge acotadas y verificables. The public reference surface is governed by the [Traky12 profile](https://github.com/Traky12/Traky12) and the [castuo-evolution control plane](https://github.com/Traky12/castuo-evolution). Current ecosystem status is documented in the [integration status](https://github.com/Traky12/castuo-evolution/blob/main/docs/GITHUB_INTEGRATION_STATUS_2026-08-16.md) and [blocker register](https://github.com/Traky12/castuo-evolution/blob/main/docs/GITHUB_INTEGRATION_BLOCKERS_2026-08-16.md).
+### Promotion sequence
 
-> Identity is not evidence. Repository activity is not operational truth. No production, certification, legal-compliance, customer, revenue, continuous-operation or federation claim is implied by this README block.
-<!-- CASTUO-PUBLIC-INTEGRATION:END -->
+`CAPABILITY → CONTRACT → IMPLEMENTATION → TEST → EVIDENCE → REPLAY → REVIEW → PROMOTION`
 
-<!-- CASTUO:ECOSYSTEM-INTEGRATION:START -->
-## CASTÚO-SYSTEM ecosystem integration
+A promotion requires evidence for the same commit, environment and scope, plus review and a recovery/rollback path. Historical snapshots, roadmap items, badges and copied repository descriptions are not operational evidence.
 
-**Declared role:** Edge e IoT para continuidad de campo.
+### References
 
-This repository is connected to the CASTÚO-SYSTEM ecosystem through the [Traky12 public profile](https://github.com/Traky12), the [Castuo-system core](https://github.com/Traky12/Castuo-system), and the [castuo-evolution governance control plane](https://github.com/Traky12/castuo-evolution). The canonical map defines relationships; repository activity does not become operational evidence by itself.
+- [Edge stack architecture](docs/architecture/EDGE-STACK.md)
+- [Repository governance boundary](docs/CASTUO_ARCHITECTURE_GOVERNANCE.md)
+- [Staging and operational boundaries](docs/STAGING.md)
 
-**Current bounded state:** GREEN-STAGING-CANDIDATE · EVIDENCE-SCOPED · PROMOTION-BLOCKED, unless this repository's own metadata declares a narrower state. Identity, implementation, tests, evidence, review and promotion remain separate dimensions.
-
-**Evidence boundary:** This README does not claim production operation, certification, legal compliance, independent validation, customer traction, revenue, continuous operation, autonomous authority or federation. Such claims require scope-bound provenance, reproducible artifacts, security review, human review and an explicit promotion decision.
-
-**Canonical references:** [CASTÚO-REPOSITORY-STANDARD-V1.0](https://github.com/Traky12/Castuo-system/blob/main/README.md), [CASTÚO public claim boundary](https://github.com/Traky12/Traky12/blob/main/PUBLIC_CLAIM_BOUNDARY.md), and the [public profile](https://github.com/Traky12/Traky12).
-<!-- CASTUO:ECOSYSTEM-INTEGRATION:END -->
+<!-- CASTUO-GOVERNED-README-BLOCK:END -->
