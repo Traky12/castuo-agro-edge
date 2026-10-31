@@ -4,24 +4,97 @@
   "title": "EvidenceManifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["manifest_id", "operation_scope_id", "generated_at", "entries", "manifest_hash"],
+  "required": [
+    "format_version",
+    "manifest_id",
+    "operation_scope_id",
+    "source_commit",
+    "generated_at",
+    "file_count",
+    "files",
+    "entries",
+    "manifest_hash"
+  ],
   "properties": {
-    "manifest_id": { "type": "string", "minLength": 1 },
-    "operation_scope_id": { "type": "string", "minLength": 1 },
-    "generated_at": { "type": "string", "format": "date-time" },
+    "manifest_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operation_scope_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
     "entries": {
       "type": "array",
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["event_id", "payload_hash"],
+        "required": [
+          "event_id",
+          "payload_hash"
+        ],
         "properties": {
-          "event_id": { "type": "string", "minLength": 1 },
-          "payload_hash": { "type": "string", "minLength": 1 },
-          "previous_event_hash": { "type": ["string", "null"] }
+          "event_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "payload_hash": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          },
+          "previous_event_hash": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 10000
+    },
+    "manifest_hash": {
+      "type": "string",
+      "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "format_version": {
+      "type": "string",
+      "const": "EB-POC-001-PORTABLE-V1"
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "file_count": {
+      "type": "integer",
+      "const": 1
+    },
+    "files": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "const": "events.jsonl"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^sha256:[0-9a-f]{64}$"
+          }
         }
       }
-    },
-    "manifest_hash": { "type": "string", "minLength": 1 }
+    }
   }
 }
