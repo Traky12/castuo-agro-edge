@@ -3,13 +3,13 @@
   "scope": "PR_CHANGED_FILES_ONLY_NOT_FULL_REPOSITORY",
   "repository": "Traky12/castuo-agro-edge",
   "pr": 38,
-  "source_head_before_manifest": "93aa2080e50588b9fdc1deb492fb2fc5f1dcb4f8",
+  "source_head_before_manifest": "5d9c7d1007b3fd6a73182ee0197325c0f31586ca",
   "hash_algorithm": "SHA-256",
   "file_count": 4,
   "files": [
     {
       "path": "evidence_bridge/bridge/export_pack.py",
-      "sha256": "df289cb3d826b1b994938251ea253d8a83376009824b4528daeaa56c7097d1ae"
+      "sha256": "9a4fab8571346254269f984b620566a794465ddcd1ed40c273f428d1aec37177"
     },
     {
       "path": "evidence_bridge/bridge/verify_pack.py",
@@ -25,7 +25,7 @@
     }
   ],
   "aggregate_method": "sha256(utf8(path + tab + hexsha256 + newline) in sorted path order)",
-  "aggregate_sha256": "4390661a8d4302798b3dd23da3300fbeeed612e640dfb8d37054f2eb37e81aa5",
+  "aggregate_sha256": "9b103662f0f57fa068198d306ac5405ebb91ad91926a29f72c0dd0dd758c20e3",
   "self_included": false,
   "G1": "BLOCKED",
   "G2": "BLOCKED",
