@@ -13,7 +13,7 @@ from pathlib import Path
 from typing import Iterable
 
 from evidence_bridge.bridge.validate import validate_evidence_manifest, validate_telemetry_event
-from evidence_bridge.bridge.provenance import canonical_form, compute_event_hash
+from evidence_bridge.bridge.provenance import compute_event_hash
 
 _COMMIT = re.compile(r"^[0-9a-f]{40}$")
 _HASH = re.compile(r"^sha256:[0-9a-f]{64}$")
