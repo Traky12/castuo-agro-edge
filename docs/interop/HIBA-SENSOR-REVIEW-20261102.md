@@ -1,0 +1,9 @@
+# Sensor -> candidate for human review (no autonomous agronomy)
+
+**Scope:** synthetic or locally authorized measurements; **NOT** a connection to OpenHIBA, HIBA+ / DATAlife / CESGA, MQTT brokers or field hardware. Source: user-supplied HIBA+ AgroData Series summary, session 2026-10-29, and published HIBA+ learning materials at https://learningdata.hubiberiaagrotech.eu/sensores-de-planta/ . No dataset or third-party rights are conveyed by that summary.
+
+The six sensor families (fruit/trunk dendrometers, sap flow, leaf temperature, soil probe and weather station) motivate a **bounded interface**. The new `sensor_decision_contract.py` function checks a caller-supplied authenticated tenant, an authorized source, a timezone-aware timestamp, a finite measurement, a source-record SHA-256 *format*, and a closed set of fields. It then emits only a deterministic review candidate with `recommendation=null`, `evidence_verified=false`, `automatic_execution=false`, `review_state=PENDING_HUMAN`, `promotion=BLOCKED`.
+
+The candidate hash is local content integrity, not proof of signature, origin or sensor calibration. The source authorization boolean must come from a trusted server-side check, never from a user payload. No agronomic thresholds, CWSI, FAO-56 ET0, irrigation quantity, fertilizer dose, crop yield, precision, field validation or certification claims are implemented. Such indicators require measured context, provenance, models, safety review and verified calibration, and all decisions remain human.
+
+Local-only tests: `python -B -m unittest discover -s tests/unit/evidence_bridge -p 'test_sensor_decision_contract.py' -v`. Acceptance into real Edge -> Evidence -> E3 requires authenticated tenant isolation, offline queue/replay, exact HEAD, negative HTTP tests, signed independent evidence, two human reviewers and complete G1/G2. This PR must not activate external services or be merged automatically.
