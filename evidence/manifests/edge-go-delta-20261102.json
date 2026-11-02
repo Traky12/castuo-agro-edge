@@ -1,0 +1,26 @@
+{
+  "schema": "castuo.change-manifest.v1",
+  "scope": "PR_DELTA_ONLY_NOT_FULL_REPO",
+  "base_sha": "a0639d6a234807c4f323d6e4a7b786cda9fd51e2",
+  "date": "2026-11-02",
+  "file_count": 3,
+  "files": [
+    {
+      "path": "docs/interop/HIBA-SENSOR-REVIEW-20261102.md",
+      "sha256": "68a5b1b4bee1f6434856af1abfa1c79b4e479e4f5aeb39bdee32b7ef26d509a3"
+    },
+    {
+      "path": "evidence_bridge/bridge/sensor_decision_contract.py",
+      "sha256": "20cc28d099fb85f1dd7a52321c8ce787cd4748417cd4e931b1f0c6b6387560d1"
+    },
+    {
+      "path": "tests/unit/evidence_bridge/test_sensor_decision_contract.py",
+      "sha256": "1025388d6ed0063197b2c2902f748bc04862bea8f5045cc8a933b605bf471654"
+    }
+  ],
+  "aggregate_algorithm": "SHA256(UTF8(path + TAB + sha256 + LF))",
+  "aggregate_sha256": "b390b3d3264a499914a72f8c2fac81019f745192ac55db967c70cab14552836c",
+  "manifest_self_hashed": false,
+  "g1": "BLOCKED",
+  "g2": "BLOCKED"
+}
