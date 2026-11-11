@@ -6,7 +6,7 @@ When upstream (`CASTUO_API_URL`) is unreachable:
 
 1. MQTT ingestion continues into the local broker.
 2. Gateway writes readings to `telemetry_queue` (SQLite).
-3. Actuator commands from **local rules** or **edge_ai/local_rules** still execute.
+3. Pilot profile: **observation only** - no actuator, local rule or physical command is subscribed to, accepted or executed. Messages on command topics are rejected and counted.
 4. Health endpoint reports `offline_capable: true` and queue depth (v0.1+).
 
 When connectivity returns:

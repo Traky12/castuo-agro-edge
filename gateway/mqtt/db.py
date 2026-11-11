@@ -4,6 +4,7 @@ import sqlite3
 import threading
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Optional
 
 
 def _event_id(seq: int, ts: str, topic: str, payload: str) -> str:
@@ -36,7 +37,7 @@ class BufferDB:
             )
             """)
             columns = {row["name"] for row in self._conn.execute("PRAGMA table_info(buffer)")}
-            for name, ddl in (("seq", "INTEGER"), ("event_id", "TEXT"), ("attempts", "INTEGER NOT NULL DEFAULT 0"), ("last_error", "TEXT")):
+            for name, ddl in (("seq", "INTEGER"), ("event_id", "TEXT"), ("attempts", "INTEGER NOT NULL DEFAULT 0"), ("last_error", "TEXT"), ("source_key", "TEXT")):
                 if name not in columns:
                     self._conn.execute(f"ALTER TABLE buffer ADD COLUMN {name} {ddl}")
             # Buffers written before event ids existed: number them in arrival order.
@@ -45,18 +46,28 @@ class BufferDB:
                                    (row["id"], _event_id(row["id"], row["ts"], row["topic"], row["payload"]), row["id"]))
             self._conn.execute("CREATE INDEX IF NOT EXISTS idx_buffer_synced_id ON buffer(synced, id)")
             self._conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_buffer_event_id ON buffer(event_id)")
+            # Identity of the physical reading: a redelivered message must not become a second event.
+            self._conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS idx_buffer_source_key ON buffer(source_key) WHERE source_key IS NOT NULL")
             self._conn.commit()
 
-    def enqueue(self, topic: str, payload: dict):
+    def enqueue(self, topic: str, payload: dict, *, source_key: Optional[str] = None, now: Optional[datetime] = None) -> bool:
+        """Buffer one event. Returns False (and stores nothing) if source_key was already buffered.
+
+        source_key is optional so legacy callers keep their behaviour; `now` lets tests fix the clock.
+        """
         with self._lock:
-            ts = datetime.now(timezone.utc).isoformat()
+            if source_key is not None and self._conn.execute(
+                    "SELECT 1 FROM buffer WHERE source_key=?", (source_key,)).fetchone():
+                return False
+            ts = (now or datetime.now(timezone.utc)).isoformat()
             body = json.dumps(payload, ensure_ascii=False)
             seq = self._conn.execute("SELECT COALESCE(MAX(seq), 0) + 1 FROM buffer").fetchone()[0]
             self._conn.execute(
-                "INSERT INTO buffer (ts, topic, payload, synced, seq, event_id) VALUES (?, ?, ?, 0, ?, ?)",
-                (ts, topic, body, seq, _event_id(seq, ts, topic, body))
+                "INSERT INTO buffer (ts, topic, payload, synced, seq, event_id, source_key) VALUES (?, ?, ?, 0, ?, ?, ?)",
+                (ts, topic, body, seq, _event_id(seq, ts, topic, body), source_key)
             )
             self._conn.commit()
+            return True
 
     def pending(self, limit: int = 100):
         with self._lock:
@@ -65,6 +76,14 @@ class BufferDB:
                 (limit,)
             )
             return cur.fetchall()
+
+    def synced_rows(self):
+        """Events already acknowledged by the core, in arrival order (input for the evidence export)."""
+        with self._lock:
+            cur = self._conn.execute(
+                "SELECT seq, event_id, ts, topic, payload FROM buffer WHERE synced=1 ORDER BY seq ASC"
+            )
+            return [dict(row) for row in cur.fetchall()]
 
     def mark_synced(self, row_id: int):
         with self._lock:

@@ -3,12 +3,14 @@ import logging
 import signal
 import threading
 import time
+from collections import Counter
 from datetime import datetime, timezone
 
 import paho.mqtt.client as mqtt
 
 from config import *
 from db import BufferDB
+from handler import process_message
 from sync import SyncWorker
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
@@ -20,12 +22,14 @@ for p in (DATA_DIR, DB_PATH.parent):
 buffer_db = BufferDB(DB_PATH)
 syncer = SyncWorker(buffer_db, BACKEND_URL, API_KEY, DEVICE_ID, batch_size=SYNC_BATCH)
 stop_event = threading.Event()
+rejections = Counter()  # reason -> count; a rejected message is counted and logged, never dropped silently
 
 def publish_status(client, online: bool):
     payload = {
         "device_id": DEVICE_ID,
         "online": online,
         "db": buffer_db.stats(),
+        "rejected": dict(rejections),
         "ts": datetime.now(timezone.utc).isoformat(),
     }
     client.publish(MQTT_TOPIC_STATUS, json.dumps(payload, ensure_ascii=False), qos=1, retain=False)
@@ -42,12 +46,12 @@ def on_disconnect(client, userdata, rc):
     log.warning("MQTT disconnected rc=%s", rc)
 
 def on_message(client, userdata, msg):
-    try:
-        payload = json.loads(msg.payload.decode("utf-8", errors="ignore"))
-    except Exception:
-        payload = {"raw": msg.payload.decode("utf-8", errors="ignore")}
-    buffer_db.enqueue(msg.topic, payload)
-    log.info("Buffered topic=%s pending=%s", msg.topic, buffer_db.stats()["pending"])
+    decision = process_message(msg.topic, msg.payload, buffer_db)
+    if decision.accepted:
+        log.info("Buffered topic=%s pending=%s", msg.topic, buffer_db.stats()["pending"])
+    else:
+        rejections[decision.reason] += 1
+        log.warning("Rejected topic=%s reason=%s", msg.topic, decision.reason)
 
 def sync_loop():
     while not stop_event.is_set():

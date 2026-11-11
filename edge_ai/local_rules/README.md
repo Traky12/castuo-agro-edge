@@ -4,6 +4,8 @@ Compatible with SABIONDA OMEGA R1–R9 semantics where latency-critical.
 
 v0.1: document thresholds only. v0.2: execute cooldowns locally without cloud.
 
+**OUT_OF_SCOPE for the pilot:** the pilot profile is observation only; nothing in this directory is executed, and no actuator command is accepted by the gateway.
+
 Do not invent compliance percentages — emit `ERROR DE CORRELACIÓN` when sensor data is incomplete.
 
 <!-- CASTUO:README-SCOPE:START -->

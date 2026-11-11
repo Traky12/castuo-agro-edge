@@ -11,48 +11,14 @@ import random
 import sqlite3
 
 import pytest
-import requests
 
 from gateway.mqtt import sync as sync_module
 from gateway.mqtt.db import BufferDB
 from gateway.mqtt.sync import SyncWorker
+from tests.support.fake_core import FakeCore
 
 TOPIC = "castuo/invernadero/zona1/sensores"
 N = 50
-
-
-class FakeCore:
-    """In-memory core that stores events by event_id and can misbehave on purpose."""
-
-    def __init__(self):
-        self.online = True
-        self.events = {}          # event_id -> body
-        self.deliveries = []      # every POST that reached the core
-        self.lose_ack_times = 0   # store the event, then fail before the client sees 2xx
-        self.fail_with_500 = 0
-
-    def post(self, url, json=None, headers=None, timeout=None):
-        if not self.online:
-            raise requests.ConnectionError("network down")
-        if self.fail_with_500:
-            self.fail_with_500 -= 1
-            return _Response(500)
-        body = json
-        assert headers["Idempotency-Key"] == body["event_id"]
-        self.deliveries.append(body)
-        stable = {k: v for k, v in body.items() if k != "gateway_ts"}
-        previous = self.events.get(body["event_id"])
-        assert previous is None or {k: v for k, v in previous.items() if k != "gateway_ts"} == stable, "same event_id with a different event"
-        self.events[body["event_id"]] = body
-        if self.lose_ack_times:
-            self.lose_ack_times -= 1
-            raise requests.ConnectionError("connection lost after the core stored the event")
-        return _Response(201 if previous is None else 200)
-
-
-class _Response:
-    def __init__(self, status_code):
-        self.status_code = status_code
 
 
 @pytest.fixture
