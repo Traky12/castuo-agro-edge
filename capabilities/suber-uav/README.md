@@ -17,8 +17,10 @@ Código importado desde el commit `b5f23f4` de `castuo-offline-field-operations`
 (rama `archive/suber-uav-snapshot`), según la decisión de llevar la capacidad a este
 repositorio. Única modificación: `docker-compose.test.yml` usa `POSTGRES_HOST_AUTH_METHOD: trust` en vez de
 `POSTGRES_PASSWORD`, porque la contraseña literal incumple la regla de secretos de este repositorio
-y además no funcionaba con el rol `castuo_app`, que no tiene contraseña. `src/`, `tests/`,
-`migrations/` y `scripts/` son idénticos al origen (mismos blobs). Quedan **fuera** de esta importación todos los documentos (`docs/`, incluidas
+y además no funcionaba con el rol `castuo_app`, que no tiene contraseña. `pyproject.toml` declara además `fastapi` y, para pruebas, `httpx`, que el
+origen usaba sin declararlos (el primer CI falló por eso; sin versiones mínimas, probado con
+fastapi 0.162.2 y httpx 0.28.1). `src/`, `tests/`, `migrations/` y `scripts/` son idénticos al
+origen (mismos blobs). Quedan **fuera** de esta importación todos los documentos (`docs/`, incluidas
 `docs/publicaciones/`) y el `README` de origen.
 
 ## Ejecutar las pruebas
