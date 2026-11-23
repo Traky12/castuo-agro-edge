@@ -1,0 +1,4 @@
+# Normaliza finales de línea: sin esto, un repositorio creado en Windows y visto desde
+# Linux muestra README.md y LICENSE como modificados por completo.
+* text=auto eol=lf
+*.png binary

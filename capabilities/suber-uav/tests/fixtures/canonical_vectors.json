@@ -1,0 +1,146 @@
+{
+  "canon_version": 1,
+  "vectores": [
+    {
+      "nombre": "texto_unicode_precompuesto",
+      "entrada": {
+        "especie": "árbol",
+        "nota": "descorche"
+      },
+      "canonico": "{\"especie\":\"árbol\",\"nota\":\"descorche\"}",
+      "sha256": "05bbfa05156b49e407ab33593262b54974f045a542a5a26ab712193171b808c5"
+    },
+    {
+      "nombre": "texto_unicode_combinante",
+      "entrada": {
+        "especie": "árbol",
+        "nota": "descorche"
+      },
+      "canonico": "{\"especie\":\"árbol\",\"nota\":\"descorche\"}",
+      "sha256": "05bbfa05156b49e407ab33593262b54974f045a542a5a26ab712193171b808c5"
+    },
+    {
+      "nombre": "entero",
+      "entrada": {
+        "n": 42,
+        "cero": 0,
+        "negativo": -7
+      },
+      "canonico": "{\"cero\":0,\"n\":42,\"negativo\":-7}",
+      "sha256": "2b4a583b9ccf7b4baff0e876830b35f87870ff5311329cfe60c8390bc5cb841a"
+    },
+    {
+      "nombre": "float",
+      "entrada": {
+        "a": 0.1,
+        "b": 2.0,
+        "c": 100.0
+      },
+      "canonico": "{\"a\":\"0.1\",\"b\":\"2\",\"c\":\"100\"}",
+      "sha256": "1e32afb71ed70c77cb8780e5b2bacc9de5069b389789c8c8ac0e20f737bba787"
+    },
+    {
+      "nombre": "decimal_normalizado",
+      "entrada": {
+        "a": "DEC:0.90",
+        "b": "DEC:1E+2",
+        "c": "DEC:-0.500"
+      },
+      "canonico": "{\"a\":\"0.9\",\"b\":\"100\",\"c\":\"-0.5\"}",
+      "sha256": "67f947c2c2809296c4b21f533c976f39e71c33125d93b69efcea36924b38bc55"
+    },
+    {
+      "nombre": "bytes",
+      "entrada": {
+        "h": "BYTES:00ff10",
+        "vacio": "BYTES:"
+      },
+      "canonico": "{\"h\":\"00ff10\",\"vacio\":\"\"}",
+      "sha256": "a24661652f43d4b1f876764abadc168a32a3e2fa61c85acbc52ddd8081351780"
+    },
+    {
+      "nombre": "uuid",
+      "entrada": {
+        "id": "UUID:9F86D081-884C-7D65-9A2F-EAA0C55AD015"
+      },
+      "canonico": "{\"id\":\"9f86d081-884c-7d65-9a2f-eaa0c55ad015\"}",
+      "sha256": "50e7c59a83ab42a83b4f3b5bc95f106a651d64ff44abb600f42dc2e7aa84a764"
+    },
+    {
+      "nombre": "timestamp_utc",
+      "entrada": {
+        "t": "TS:2026-02-15T09:12:00.123456+00:00"
+      },
+      "canonico": "{\"t\":\"2026-02-15T09:12:00.123456Z\"}",
+      "sha256": "5f0cda568aa99fbd53a74807516bb70670275d43de3b8b5d9c2165e7d915a4bc"
+    },
+    {
+      "nombre": "timestamp_otro_huso",
+      "entrada": {
+        "t": "TS:2026-02-15T10:12:00.123456+01:00"
+      },
+      "canonico": "{\"t\":\"2026-02-15T09:12:00.123456Z\"}",
+      "sha256": "5f0cda568aa99fbd53a74807516bb70670275d43de3b8b5d9c2165e7d915a4bc"
+    },
+    {
+      "nombre": "lista_orden_significativo",
+      "entrada": {
+        "l": [
+          3,
+          1,
+          2
+        ]
+      },
+      "canonico": "{\"l\":[3,1,2]}",
+      "sha256": "f61d9d452d3af2931c0a81524f36bbdf47361a2f210cb797ec82eed20472b0f8"
+    },
+    {
+      "nombre": "objeto_anidado",
+      "entrada": {
+        "a": {
+          "z": 1,
+          "y": {
+            "x": [
+              true,
+              false,
+              null
+            ]
+          }
+        }
+      },
+      "canonico": "{\"a\":{\"y\":{\"x\":[true,false,null]},\"z\":1}}",
+      "sha256": "d9ad2d57f873f510179e47d40d4dfaf77f8a01f284e0dd20deb14183be9275cf"
+    },
+    {
+      "nombre": "claves_desordenadas",
+      "entrada": {
+        "z": 1,
+        "a": 2,
+        "m": 3
+      },
+      "canonico": "{\"a\":2,\"m\":3,\"z\":1}",
+      "sha256": "ebba85cfdc0a724b6cc327ecc545faeb38b9fe02eca603b430eb872f5cf75370"
+    },
+    {
+      "nombre": "claves_mismo_objeto_otro_orden",
+      "entrada": {
+        "m": 3,
+        "a": 2,
+        "z": 1
+      },
+      "canonico": "{\"a\":2,\"m\":3,\"z\":1}",
+      "sha256": "ebba85cfdc0a724b6cc327ecc545faeb38b9fe02eca603b430eb872f5cf75370"
+    },
+    {
+      "nombre": "nulos_y_booleanos",
+      "entrada": {
+        "n": null,
+        "t": true,
+        "f": false,
+        "cero": 0
+      },
+      "canonico": "{\"cero\":0,\"f\":false,\"n\":null,\"t\":true}",
+      "sha256": "5f530f91288279410410953f022c95a8bfefe3d2eecbd6529fef3a76abe33875"
+    }
+  ]
+}
