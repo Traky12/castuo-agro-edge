@@ -1,0 +1,24 @@
+{
+  "captured_at": "2026-02-15T09:12:00+00:00",
+  "descriptores": [
+    {
+      "altura_rel": 0.62,
+      "perimetro_rel": 0.81,
+      "unidad": "rodal-A"
+    },
+    {
+      "altura_rel": 0.51,
+      "perimetro_rel": 0.44,
+      "unidad": "rodal-B"
+    },
+    {
+      "altura_rel": 0.77,
+      "perimetro_rel": 0.93,
+      "unidad": "rodal-C"
+    }
+  ],
+  "evidence_id": "ev-vuelo-001",
+  "geometry": "POINT(-6.9812 39.2214)",
+  "origen": "simulado",
+  "sensor": "lidar-sintetico"
+}

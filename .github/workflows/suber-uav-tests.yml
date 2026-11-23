@@ -1,0 +1,60 @@
+name: SUBER UAV tests
+
+on:
+  pull_request:
+    paths:
+      - "capabilities/suber-uav/**"
+      - ".github/workflows/suber-uav-tests.yml"
+  push:
+    branches: [main]
+    paths:
+      - "capabilities/suber-uav/**"
+      - ".github/workflows/suber-uav-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: suber-uav-tests-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest-postgres:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: capabilities/suber-uav
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: castuo_test
+          # Base efimera de pruebas dentro del job: sin contrasena, no expuesta.
+          POSTGRES_HOST_AUTH_METHOD: trust
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d castuo_test"
+          --health-interval 2s
+          --health-timeout 3s
+          --health-retries 20
+    env:
+      CASTUO_PGHOST: localhost
+      CASTUO_PGPORT: "5432"
+      CASTUO_PGDATABASE: castuo_test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -e ".[dev]"
+      - name: Create application role
+        # Los roles son del cluster, no del esquema; tests/conftest.py espera que ya exista.
+        run: psql -h localhost -U postgres -d castuo_test -c "CREATE ROLE castuo_app LOGIN;"
+      - name: Tests (PostgreSQL 16)
+        run: python -m pytest
